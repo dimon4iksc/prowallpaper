@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,40 @@
       name="description"
       content="PRO Шпалери — шоурум шпалер у Львові. Флізелінові, вінілові, натуральні, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
     />
+    <meta
+      name="keywords"
+      content="шпалери львів, флізелінові шпалери, вінілові шпалери, фотошпалери на замовлення, 3d панно, шоурум шпалер, купити шпалери львів, поклейка шпалер"
+    />
+    <meta name="author" content="PRO Шпалери" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#16130f" />
+    <meta name="geo.region" content="UA-46" />
+    <meta name="geo.placename" content="Львів" />
+    <link rel="canonical" href="__DOMAIN__/" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="PRO Шпалери" />
+    <meta property="og:title" content="PRO Шпалери — шоурум шпалер у Львові" />
+    <meta
+      property="og:description"
+      content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
+    />
+    <meta property="og:url" content="__DOMAIN__/" />
+    <meta property="og:image" content="__DOMAIN__/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PRO Шпалери — шоурум шпалер у Львові" />
+    <meta
+      name="twitter:description"
+      content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Доставка по Україні."
+    />
+    <meta name="twitter:image" content="__DOMAIN__/images/og-image.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +64,8 @@
         --sage: #8fa091; /* приглушена зелень з флораль-шпалер */
         --gold-thread: #b08d3e; /* золота нитка з каталогів */
         --line: rgba(22, 19, 15, 0.12);
+        --true-black: #0a0a09; /* чистий чорний для секції асортименту */
+        --true-black-elev: #17140f; /* трохи світліший чорний для карток */
 
         --font-display: "Archivo Black", sans-serif;
         --font-serif: "Fraunces", serif;
@@ -43,6 +79,71 @@
       }
       html {
         scroll-behavior: smooth;
+      }
+
+      /* ============================================================
+     АНІМАЦІЇ: поява при скролі + hero-ефекти
+     ============================================================ */
+      @media (prefers-reduced-motion: no-preference) {
+        .reveal {
+          opacity: 0;
+          transform: translateY(30px);
+          transition:
+            opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .reveal-stagger > * {
+          opacity: 0;
+          transform: translateY(26px);
+          transition:
+            opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-stagger.in-view > * {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .reveal-stagger.in-view > *:nth-child(1) {
+          transition-delay: 0.03s;
+        }
+        .reveal-stagger.in-view > *:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+        .reveal-stagger.in-view > *:nth-child(3) {
+          transition-delay: 0.17s;
+        }
+        .reveal-stagger.in-view > *:nth-child(4) {
+          transition-delay: 0.24s;
+        }
+        .reveal-stagger.in-view > *:nth-child(5) {
+          transition-delay: 0.31s;
+        }
+        .reveal-stagger.in-view > *:nth-child(6) {
+          transition-delay: 0.38s;
+        }
+
+        @keyframes heroUp {
+          from {
+            opacity: 0;
+            transform: translateY(26px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes heroFadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
       }
       body {
         font-family: var(--font-body);
@@ -127,7 +228,9 @@
         border-radius: 2px;
         cursor: pointer;
         border: 2px solid transparent;
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
       }
       .btn:hover {
         transform: translateY(-2px);
@@ -223,7 +326,8 @@
      ============================================================ */
       .hero {
         padding: 72px 0 40px;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             circle at 88% 8%,
             rgba(244, 196, 48, 0.35),
             transparent 45%
@@ -236,6 +340,27 @@
         grid-template-columns: 1.1fr 0.9fr;
         gap: 56px;
         align-items: center;
+        perspective: 1200px;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .hero .eyebrow {
+          animation: heroUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .hero h1 {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+        }
+        .hero .lead {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+        }
+        .hero-actions {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+        }
+        .hero-stats {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+        }
+        .swatch-fan {
+          animation: heroFadeIn 1s ease 0.25s both;
+        }
       }
       @media (max-width: 900px) {
         .hero-grid {
@@ -279,6 +404,11 @@
       .swatch-fan {
         position: relative;
         height: 420px;
+        transform-style: preserve-3d;
+        transform: translateY(var(--fan-ty, 0px)) rotateY(var(--fan-ry, 0deg))
+          rotateX(var(--fan-rx, 0deg));
+        transition: transform 0.2s ease-out;
+        will-change: transform;
       }
       .swatch {
         position: absolute;
@@ -291,7 +421,9 @@
         background-size: cover;
         background-position: center;
         transform-origin: bottom center;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
       }
       .swatch:nth-child(1) {
         transform: translateX(-50%) rotate(-18deg) translateY(10px);
@@ -390,16 +522,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: background 0.2s;
+        border-left: 3px solid transparent;
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease,
+          border-color 0.25s ease;
       }
       .assort-card:hover {
         background: var(--cream);
+        transform: translateY(-6px);
       }
       .assort-num {
         font-family: var(--font-serif);
         font-style: italic;
         color: var(--gold-thread);
         font-size: 14px;
+        transition: transform 0.25s ease;
+      }
+      .assort-card:hover .assort-num {
+        transform: translateX(4px);
       }
       .assort-icon {
         width: 40px;
@@ -417,6 +558,44 @@
         font-size: 13px;
         opacity: 0.65;
         margin-top: 6px;
+      }
+
+      /* ---------- Асортимент: чорна секція ---------- */
+      #assortment {
+        background: var(--true-black);
+        color: var(--paper);
+      }
+      #assortment .eyebrow {
+        color: var(--yellow);
+      }
+      #assortment .eyebrow::before {
+        background: var(--yellow);
+      }
+      #assortment h2 {
+        color: var(--paper);
+      }
+      #assortment .lead {
+        color: rgba(251, 248, 241, 0.75);
+      }
+      #assortment .assort-grid {
+        background: rgba(251, 248, 241, 0.1);
+        border-color: rgba(251, 248, 241, 0.14);
+      }
+      #assortment .assort-card {
+        background: var(--true-black-elev);
+      }
+      #assortment .assort-card:hover {
+        background: #201b13;
+        border-left-color: var(--yellow);
+      }
+      #assortment .assort-num {
+        color: var(--yellow);
+      }
+      #assortment .assort-card h3 {
+        color: var(--paper);
+      }
+      #assortment .assort-card p {
+        color: rgba(251, 248, 241, 0.62);
       }
 
       /* ============================================================
@@ -767,6 +946,10 @@
      ================================================================== -->
     <script>
       const SITE = {
+        // ⚠️ Заготовка: коли зʼявиться реальний домен, впишіть його сюди
+        // (без завершального "/"), напр. "https://proshpalery.com.ua" —
+        // це автоматично підставиться в canonical, Open Graph, JSON-LD.
+        domain: "https://your-domain.com.ua",
         brand: "PRO Шпалери",
         city: "Львів",
         phoneDisplay: "+380 97 585 94 52",
@@ -855,19 +1038,25 @@
           <div class="swatch-fan">
             <div
               class="swatch"
-              style="background-image: url('images/swatches-blue.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-blue.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/swatches-gold.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-gold.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/swatches-green.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-green.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/hero-blossom.jpg')"
+              style="background-image: url(&quot;images/hero-blossom.jpg&quot;)"
             ></div>
           </div>
         </div>
@@ -895,11 +1084,11 @@
       <section id="about">
         <div class="wrap">
           <div class="eyebrow">Про нас</div>
-          <h2 style="max-width: 760px">
+          <h2 class="reveal" style="max-width: 760px">
             Шоурум, де можна побачити, доторкнутись<br />і уявити свою кімнату
             наперед
           </h2>
-          <p class="lead">
+          <p class="lead reveal">
             У шоурумі ви переглядаєте зразки, порівнюєте текстури, обговорюєте
             побажання і одразу бачите, як усе виглядає в реальному просторі — з
             паркінгом біля входу та щирою консультацією щодо бюджету.
@@ -908,16 +1097,16 @@
       </section>
 
       <!-- ================= АСОРТИМЕНТ ================= -->
-      <section id="assortment" style="background: var(--cream)">
+      <section id="assortment">
         <div class="wrap">
-          <div class="eyebrow">У нас ви знайдете</div>
-          <h2>Різні типи шпалер</h2>
-          <p class="lead">
+          <div class="eyebrow reveal">У нас ви знайдете</div>
+          <h2 class="reveal">Різні типи шпалер</h2>
+          <p class="lead reveal">
             П'ять напрямів, серед яких завжди знайдеться рішення під ваш простір
             і бюджет.
           </p>
 
-          <div class="assort-grid">
+          <div class="assort-grid reveal-stagger">
             <div class="assort-card">
               <div class="assort-num">01</div>
               <div>
@@ -960,11 +1149,11 @@
       <!-- ================= ЦІНИ Й БРЕНДИ ================= -->
       <section id="price" class="price-section">
         <div class="wrap">
-          <div class="eyebrow">Прайс і бренди</div>
-          <h2 style="color: var(--paper)">
+          <div class="eyebrow reveal">Прайс і бренди</div>
+          <h2 class="reveal" style="color: var(--paper)">
             Чесна ціна.<br />Перевірені виробники.
           </h2>
-          <div class="price-grid">
+          <div class="price-grid reveal-stagger">
             <div class="price-card">
               <div class="big">від 170 грн/м²</div>
               <p>Шпалери в широкому діапазоні цін</p>
@@ -988,12 +1177,12 @@
       <!-- ================= ЯК ЗАМОВИТИ ================= -->
       <section id="order">
         <div class="wrap">
-          <div class="eyebrow">Як відбувається замовлення</div>
-          <h2 style="max-width: 760px">
+          <div class="eyebrow reveal">Як відбувається замовлення</div>
+          <h2 class="reveal" style="max-width: 760px">
             Простий і зрозумілий процес — ось коротко, як усе працює
           </h2>
 
-          <div class="steps">
+          <div class="steps reveal-stagger">
             <div class="step">
               <div class="step-num">01</div>
               <div>
@@ -1042,10 +1231,10 @@
       <!-- ================= ГАЛЕРЕЯ ================= -->
       <section id="gallery" style="background: var(--cream)">
         <div class="wrap">
-          <div class="eyebrow">Шоурум</div>
-          <h2>Погляньте, де ми працюємо</h2>
+          <div class="eyebrow reveal">Шоурум</div>
+          <h2 class="reveal">Погляньте, де ми працюємо</h2>
 
-          <div class="gallery-grid">
+          <div class="gallery-grid reveal-stagger">
             <img
               class="g1"
               src="images/gallery-couch.jpg"
@@ -1071,7 +1260,7 @@
             />
           </div>
 
-          <div class="tour-card">
+          <div class="tour-card reveal">
             <div>
               <h3>3D-тур по шоуруму</h3>
               <p>
@@ -1093,10 +1282,10 @@
       <!-- ================= КОНТАКТИ ================= -->
       <section id="contacts">
         <div class="wrap">
-          <div class="eyebrow">Контакти</div>
-          <h2>Завітайте в шоурум<br />або напишіть нам</h2>
+          <div class="eyebrow reveal">Контакти</div>
+          <h2 class="reveal">Завітайте в шоурум<br />або напишіть нам</h2>
 
-          <div class="contact-grid">
+          <div class="contact-grid reveal">
             <div>
               <div class="contact-list">
                 <div class="contact-item">
@@ -1203,8 +1392,54 @@
           .replaceAll("__VIBER__", SITE.viberLink)
           .replaceAll("__MAP_EMBED__", SITE.mapEmbedUrl)
           .replaceAll("__TOUR3D__", SITE.tour3dUrl);
+
+        // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
+        document.head.innerHTML = document.head.innerHTML.replaceAll(
+          "__DOMAIN__",
+          SITE.domain,
+        );
       }
       fill();
+
+      // ---- SEO: schema.org LocalBusiness (JSON-LD) ----
+      function injectStructuredData() {
+        const data = {
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          name: SITE.brand,
+          image: `${SITE.domain}/images/og-image.jpg`,
+          url: `${SITE.domain}/`,
+          telephone: SITE.phoneRaw,
+          email: SITE.email,
+          priceRange: SITE.priceFrom,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: SITE.address,
+            addressLocality: SITE.city,
+            addressCountry: "UA",
+          },
+          sameAs: [SITE.instagram, SITE.facebook].filter(Boolean),
+          openingHoursSpecification: SITE.hours
+            .filter(([, time]) => time !== "вихідний")
+            .map(([day, time]) => {
+              const [opens, closes] = time
+                .replaceAll("–", "-")
+                .split("-")
+                .map((s) => s.trim());
+              return {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: day,
+                opens,
+                closes,
+              };
+            }),
+        };
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      }
+      injectStructuredData();
 
       // ---- графік роботи ----
       const hoursTable = document.getElementById("hoursTable");
@@ -1226,6 +1461,80 @@
       document.getElementById("modalOverlay").addEventListener("click", (e) => {
         if (e.target.id === "modalOverlay") closeModal();
       });
+
+      // ---- анімації появи елементів при скролі ----
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        document
+          .querySelectorAll(".reveal, .reveal-stagger")
+          .forEach((el) => el.classList.add("in-view"));
+      }
+
+      // ---- parallax: нахил і прокрутка "віяла" зразків у hero ----
+      if (!prefersReducedMotion) {
+        const fan = document.querySelector(".swatch-fan");
+        if (fan) {
+          let idleAngle = 0;
+          let hovering = false;
+
+          fan.addEventListener("mousemove", (e) => {
+            hovering = true;
+            const rect = fan.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            fan.style.setProperty("--fan-ry", `${x * 14}deg`);
+            fan.style.setProperty("--fan-rx", `${-y * 14}deg`);
+          });
+          fan.addEventListener("mouseleave", () => {
+            hovering = false;
+          });
+
+          function idleTilt() {
+            if (!hovering) {
+              idleAngle += 0.006;
+              fan.style.setProperty(
+                "--fan-ry",
+                `${Math.sin(idleAngle) * 4}deg`,
+              );
+              fan.style.setProperty(
+                "--fan-rx",
+                `${Math.cos(idleAngle * 0.8) * 2}deg`,
+              );
+            }
+            requestAnimationFrame(idleTilt);
+          }
+          requestAnimationFrame(idleTilt);
+
+          let ticking = false;
+          window.addEventListener("scroll", () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const offset = Math.min(window.scrollY * 0.12, 50);
+                fan.style.setProperty("--fan-ty", `${offset}px`);
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+        }
+      }
     </script>
   </body>
 </html>
