@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRO Шпалери — шоурум шпалер у Львові</title>
+    <meta
+      name="description"
+      content="PRO Шпалери — шоурум шпалер у Львові. Флізелінові, вінілові, натуральні, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
+    />
+    <meta
+      name="keywords"
+      content="шпалери львів, флізелінові шпалери, вінілові шпалери, фотошпалери на замовлення, 3d панно, шоурум шпалер, купити шпалери львів, поклейка шпалер"
+    />
+    <meta name="author" content="PRO Шпалери" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#16130f" />
+    <meta name="geo.region" content="UA-46" />
+    <meta name="geo.placename" content="Львів" />
+    <link rel="canonical" href="__DOMAIN__/" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="PRO Шпалери" />
+    <meta
+      property="og:title"
+      content="PRO Шпалери — шоурум шпалер у Львові"
+    />
+    <meta
+      property="og:description"
+      content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
+    />
+    <meta property="og:url" content="__DOMAIN__/" />
+    <meta property="og:image" content="__DOMAIN__/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="PRO Шпалери — шоурум шпалер у Львові"
+    />
+    <meta
+      name="twitter:description"
+      content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Доставка по Україні."
+    />
+    <meta name="twitter:image" content="__DOMAIN__/images/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================================================
+     ДИЗАЙН-ТОКЕНИ — кольори й шрифти сайту
+     ============================================================ */
+      :root {
+        --yellow: #f4c430; /* фірмовий жовтий з вивіски PRO ШПАЛЕРИ */
+        --yellow-deep: #e0a800;
+        --ink: #16130f; /* майже чорний, теплий */
+        --charcoal: #2a2622; /* графіт зі стін шоуруму */
+        --cream: #f6f1e6; /* тепле полотно шпалер */
+        --paper: #fbf8f1;
+        --sage: #8fa091; /* приглушена зелень з флораль-шпалер */
+        --gold-thread: #b08d3e; /* золота нитка з каталогів */
+        --line: rgba(22, 19, 15, 0.12);
+        --true-black: #0a0a09; /* чистий чорний для секції асортименту */
+        --true-black-elev: #17140f; /* трохи світліший чорний для карток */
+
+        --font-display: "Archivo Black", sans-serif;
+        --font-serif: "Fraunces", serif;
+        --font-body: "Manrope", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* ============================================================
+     АНІМАЦІЇ: поява при скролі + hero-ефекти
+     ============================================================ */
+      @media (prefers-reduced-motion: no-preference) {
+        .reveal {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .reveal-stagger > * {
+          opacity: 0;
+          transform: translateY(26px);
+          transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-stagger.in-view > * {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .reveal-stagger.in-view > *:nth-child(1) {
+          transition-delay: 0.03s;
+        }
+        .reveal-stagger.in-view > *:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+        .reveal-stagger.in-view > *:nth-child(3) {
+          transition-delay: 0.17s;
+        }
+        .reveal-stagger.in-view > *:nth-child(4) {
+          transition-delay: 0.24s;
+        }
+        .reveal-stagger.in-view > *:nth-child(5) {
+          transition-delay: 0.31s;
+        }
+        .reveal-stagger.in-view > *:nth-child(6) {
+          transition-delay: 0.38s;
+        }
+
+        @keyframes heroUp {
+          from {
+            opacity: 0;
+            transform: translateY(26px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes heroFadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+      body {
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        padding: 96px 0;
+        position: relative;
+      }
+      @media (max-width: 720px) {
+        section {
+          padding: 64px 0;
+        }
+      }
+
+      .eyebrow {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+        color: var(--gold-thread);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: var(--gold-thread);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+      }
+      h2 {
+        font-size: clamp(28px, 4vw, 44px);
+        margin-bottom: 20px;
+      }
+      .lead {
+        font-size: 18px;
+        color: var(--charcoal);
+        max-width: 620px;
+        opacity: 0.85;
+      }
+
+      /* ---------- Кнопки ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 30px;
+        font-family: var(--font-body);
+        font-weight: 800;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+      .btn-primary:hover {
+        box-shadow: 8px 8px 0 var(--ink);
+      }
+      .btn-outline {
+        background: transparent;
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-light {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      /* ============================================================
+     ШАПКА / НАВІГАЦІЯ
+     ============================================================ */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(251, 248, 241, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .logo {
+        font-family: var(--font-display);
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+      .logo span {
+        background: var(--yellow);
+        padding: 2px 6px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .nav-links a {
+        opacity: 0.75;
+        transition: opacity 0.15s;
+      }
+      .nav-links a:hover {
+        opacity: 1;
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 26px;
+        cursor: pointer;
+      }
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+        .burger {
+          display: block;
+        }
+      }
+      @media (max-width: 480px) {
+        .nav-cta button {
+          padding: 10px 14px !important;
+          font-size: 12px;
+        }
+      }
+
+      /* ============================================================
+     HERO
+     ============================================================ */
+      .hero {
+        padding: 72px 0 40px;
+        background: radial-gradient(
+            circle at 88% 8%,
+            rgba(244, 196, 48, 0.35),
+            transparent 45%
+          ),
+          var(--cream);
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+        perspective: 1200px;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .hero .eyebrow {
+          animation: heroUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .hero h1 {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+        }
+        .hero .lead {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+        }
+        .hero-actions {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+        }
+        .hero-stats {
+          animation: heroUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+        }
+        .swatch-fan {
+          animation: heroFadeIn 1s ease 0.25s both;
+        }
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(38px, 6vw, 68px);
+        margin-bottom: 22px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--paper);
+        -webkit-text-stroke: 1.5px var(--ink);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 34px;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 36px;
+        margin-top: 44px;
+        flex-wrap: wrap;
+      }
+      .hero-stat b {
+        font-family: var(--font-display);
+        font-size: 26px;
+        display: block;
+      }
+      .hero-stat span {
+        font-size: 13px;
+        opacity: 0.7;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      /* --- сигнатурний елемент: віяло зразків шпалер --- */
+      .swatch-fan {
+        position: relative;
+        height: 420px;
+        transform-style: preserve-3d;
+        transform: translateY(var(--fan-ty, 0px)) rotateY(var(--fan-ry, 0deg))
+          rotateX(var(--fan-rx, 0deg));
+        transition: transform 0.2s ease-out;
+        will-change: transform;
+      }
+      .swatch {
+        position: absolute;
+        width: 160px;
+        height: 340px;
+        top: 20px;
+        left: 50%;
+        border: 6px solid var(--paper);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        background-size: cover;
+        background-position: center;
+        transform-origin: bottom center;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+      .swatch:nth-child(1) {
+        transform: translateX(-50%) rotate(-18deg) translateY(10px);
+        z-index: 1;
+      }
+      .swatch:nth-child(2) {
+        transform: translateX(-50%) rotate(-6deg) translateY(0);
+        z-index: 2;
+      }
+      .swatch:nth-child(3) {
+        transform: translateX(-50%) rotate(6deg) translateY(0);
+        z-index: 3;
+      }
+      .swatch:nth-child(4) {
+        transform: translateX(-50%) rotate(18deg) translateY(10px);
+        z-index: 4;
+      }
+      .swatch-fan:hover .swatch:nth-child(1) {
+        transform: translateX(-50%) rotate(-30deg) translateY(6px);
+      }
+      .swatch-fan:hover .swatch:nth-child(2) {
+        transform: translateX(-50%) rotate(-10deg) translateY(-8px);
+      }
+      .swatch-fan:hover .swatch:nth-child(3) {
+        transform: translateX(-50%) rotate(10deg) translateY(-8px);
+      }
+      .swatch-fan:hover .swatch:nth-child(4) {
+        transform: translateX(-50%) rotate(30deg) translateY(6px);
+      }
+      @media (max-width: 900px) {
+        .swatch-fan {
+          height: 300px;
+        }
+        .swatch {
+          width: 120px;
+          height: 250px;
+        }
+      }
+
+      /* ============================================================
+     СМУГА СТАТИСТИКИ
+     ============================================================ */
+      .stripe {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 34px 0;
+      }
+      .stripe .wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .stripe-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      .stripe-item .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--yellow);
+        border-radius: 50%;
+        flex: none;
+      }
+
+      /* ============================================================
+     АСОРТИМЕНТ
+     ============================================================ */
+      .assort-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        margin-top: 48px;
+      }
+      @media (max-width: 960px) {
+        .assort-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .assort-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .assort-card {
+        background: var(--paper);
+        min-height: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 3px solid transparent;
+        transition: background 0.25s ease, transform 0.25s ease,
+          border-color 0.25s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .assort-card:hover {
+        background: var(--cream);
+        transform: translateY(-6px);
+      }
+      .assort-cover {
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+      }
+      .assort-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .assort-card:hover .assort-cover img {
+        transform: scale(1.08);
+      }
+      .assort-cover::after {
+        content: "Переглянути фото →";
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 8px 14px;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: #fff;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      .assort-card:hover .assort-cover::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .assort-body {
+        padding: 22px 22px 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+      }
+      .assort-num {
+        font-family: var(--font-serif);
+        font-style: italic;
+        color: var(--gold-thread);
+        font-size: 14px;
+        transition: transform 0.25s ease;
+      }
+      .assort-card:hover .assort-num {
+        transform: translateX(4px);
+      }
+      .assort-icon {
+        width: 40px;
+        height: 40px;
+        margin: 14px 0;
+      }
+      .assort-card h3 {
+        font-family: var(--font-body);
+        font-weight: 800;
+        font-size: 15px;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      .assort-card p {
+        font-size: 13px;
+        opacity: 0.65;
+        margin-top: 6px;
+      }
+
+      /* ---------- Асортимент: чорна секція ---------- */
+      #assortment {
+        background: var(--true-black);
+        color: var(--paper);
+      }
+      #assortment .eyebrow {
+        color: var(--yellow);
+      }
+      #assortment .eyebrow::before {
+        background: var(--yellow);
+      }
+      #assortment h2 {
+        color: var(--paper);
+      }
+      #assortment .lead {
+        color: rgba(251, 248, 241, 0.75);
+      }
+      #assortment .assort-grid {
+        background: rgba(251, 248, 241, 0.1);
+        border-color: rgba(251, 248, 241, 0.14);
+      }
+      #assortment .assort-card {
+        background: var(--true-black-elev);
+      }
+      #assortment .assort-card:hover {
+        background: #201b13;
+        border-left-color: var(--yellow);
+      }
+      #assortment .assort-num {
+        color: var(--yellow);
+      }
+      #assortment .assort-card h3 {
+        color: var(--paper);
+      }
+      #assortment .assort-card p {
+        color: rgba(251, 248, 241, 0.62);
+      }
+
+      /* ---------- Блок "Замовити поклейку" ---------- */
+      .install-cta {
+        background: var(--yellow);
+        padding: 56px 0;
+      }
+      .install-cta .wrap {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .install-cta h2 {
+        color: var(--ink);
+        max-width: 560px;
+      }
+      .install-cta p {
+        color: rgba(22, 19, 15, 0.75);
+        margin-top: 12px;
+        max-width: 520px;
+        font-size: 15px;
+      }
+      .install-cta .btn-primary {
+        background: var(--ink);
+        color: var(--paper);
+        margin-top: 22px;
+      }
+      .install-cta .btn-primary:hover {
+        background: #2a241c;
+      }
+      .install-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .install-photos img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+      .install-photos img:first-child {
+        grid-column: 1 / -1;
+        height: 150px;
+      }
+      @media (max-width: 860px) {
+        .install-cta .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Лайтбокс-галерея по типу шпалер ---------- */
+      .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 9, 0.92);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        padding: 24px;
+      }
+      .lightbox-overlay.open {
+        display: flex;
+      }
+      .lightbox-box {
+        max-width: 900px;
+        width: 100%;
+      }
+      .lightbox-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .lightbox-head h3 {
+        color: var(--paper);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 22px;
+        font-weight: 400;
+      }
+      .lightbox-close {
+        background: none;
+        border: 1px solid rgba(251, 248, 241, 0.3);
+        color: var(--paper);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.2s;
+      }
+      .lightbox-close:hover {
+        background: rgba(251, 248, 241, 0.15);
+      }
+      .lightbox-main {
+        position: relative;
+        background: #000;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .lightbox-main img {
+        width: 100%;
+        max-height: 62vh;
+        object-fit: contain;
+        display: block;
+        background: #000;
+      }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .lightbox-nav:hover {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+      .lightbox-prev {
+        left: 12px;
+      }
+      .lightbox-next {
+        right: 12px;
+      }
+      .lightbox-thumbs {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .lightbox-thumbs img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 2px;
+        cursor: pointer;
+        opacity: 0.55;
+        border: 2px solid transparent;
+        transition: opacity 0.2s, border-color 0.2s;
+        flex-shrink: 0;
+      }
+      .lightbox-thumbs img.active {
+        opacity: 1;
+        border-color: var(--yellow);
+      }
+      .lightbox-cta {
+        margin-top: 18px;
+        text-align: center;
+      }
+
+      /* ============================================================
+     ЦІНИ / БРЕНДИ
+     ============================================================ */
+      .price-section {
+        background: var(--charcoal);
+        color: var(--paper);
+      }
+      .price-section .eyebrow {
+        color: var(--yellow);
+      }
+      .price-section .eyebrow::before {
+        background: var(--yellow);
+      }
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-top: 48px;
+      }
+      @media (max-width: 900px) {
+        .price-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .price-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .price-card {
+        border: 1px solid rgba(251, 248, 241, 0.18);
+        padding: 28px 22px;
+      }
+      .price-card .big {
+        font-family: var(--font-display);
+        font-size: 28px;
+        color: var(--yellow);
+        margin-bottom: 10px;
+      }
+      .price-card p {
+        font-size: 14px;
+        opacity: 0.75;
+      }
+
+      /* ============================================================
+     ЯК ВІДБУВАЄТЬСЯ ЗАМОВЛЕННЯ
+     ============================================================ */
+      .steps {
+        margin-top: 54px;
+        display: flex;
+        flex-direction: column;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 28px;
+        padding: 34px 0;
+        border-top: 1px solid var(--line);
+        align-items: start;
+      }
+      .step:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .step-num {
+        font-family: var(--font-display);
+        font-size: 38px;
+        color: var(--yellow);
+        -webkit-text-stroke: 1px var(--ink);
+      }
+      .step h3 {
+        font-family: var(--font-body);
+        font-weight: 800;
+        text-transform: none;
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .step p {
+        opacity: 0.75;
+        max-width: 560px;
+        font-size: 15px;
+      }
+
+      /* ============================================================
+     ГАЛЕРЕЯ
+     ============================================================ */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 180px;
+        gap: 10px;
+        margin-top: 48px;
+      }
+      .gallery-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-grid .g1 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .gallery-grid .g2 {
+        grid-column: span 2;
+      }
+      @media (max-width: 900px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 150px;
+        }
+        .gallery-grid .g1 {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+      }
+      @media (max-width: 560px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid .g1,
+        .gallery-grid .g2 {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
+
+      .tour-card {
+        margin-top: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 30px 34px;
+        flex-wrap: wrap;
+      }
+      .tour-card h3 {
+        font-family: var(--font-body);
+        text-transform: none;
+        font-weight: 800;
+        font-size: 19px;
+      }
+      .tour-card p {
+        opacity: 0.7;
+        font-size: 14px;
+        margin-top: 6px;
+        max-width: 420px;
+      }
+
+      /* ============================================================
+     КОНТАКТИ
+     ============================================================ */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        margin-top: 48px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .contact-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .contact-item .ic {
+        width: 44px;
+        height: 44px;
+        flex: none;
+        border-radius: 50%;
+        background: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-family: var(--font-display);
+        font-size: 16px;
+      }
+      .contact-item b {
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        opacity: 0.6;
+        margin-bottom: 2px;
+      }
+      .contact-item a,
+      .contact-item span {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .hours-table {
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse;
+      }
+      .hours-table td {
+        padding: 6px 0;
+        font-size: 14px;
+        border-bottom: 1px dashed var(--line);
+      }
+      .hours-table td:last-child {
+        text-align: right;
+        font-weight: 700;
+      }
+      .map-frame {
+        width: 100%;
+        height: 420px;
+        border: 0;
+        filter: grayscale(0.15) contrast(1.05);
+      }
+      .social-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .social-row a {
+        width: 44px;
+        height: 44px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        transition: 0.15s;
+      }
+      .social-row a:hover {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 40px 0;
+      }
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 13px;
+        opacity: 0.65;
+      }
+
+      /* ============================================================
+     ПЛАВАЮЧА КНОПКА ДІЇ + МОДАЛЬНЕ ВІКНО ЗВ'ЯЗКУ
+     ============================================================ */
+      .fab {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 60;
+        background: var(--yellow);
+        color: var(--ink);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+        font-size: 26px;
+        border: none;
+        cursor: pointer;
+      }
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(22, 19, 15, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        padding: 20px;
+      }
+      .modal-overlay.open {
+        display: flex;
+      }
+      .modal {
+        background: var(--paper);
+        max-width: 380px;
+        width: 100%;
+        padding: 34px 28px;
+        border-top: 6px solid var(--yellow);
+      }
+      .modal h3 {
+        font-family: var(--font-body);
+        text-transform: none;
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+      .modal p {
+        font-size: 14px;
+        opacity: 0.7;
+        margin-bottom: 24px;
+      }
+      .modal-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .modal-options a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border: 1px solid var(--line);
+        padding: 14px 16px;
+        font-weight: 700;
+        font-size: 15px;
+        transition: 0.15s;
+      }
+      .modal-options a:hover {
+        border-color: var(--ink);
+        background: var(--cream);
+      }
+      .modal-close {
+        margin-top: 20px;
+        background: none;
+        border: none;
+        font-size: 14px;
+        text-decoration: underline;
+        cursor: pointer;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==================================================================
+     ⚙️  ПАНЕЛЬ ДАНИХ САЙТУ
+     Тут зібрані ВСІ тексти, номери, адреса, посилання, ціни.
+     Щоб змінити будь-що на сайті — редагуйте тільки тут,
+     дизайн і код нижче можна не чіпати.
+     ================================================================== -->
+    <script>
+      const SITE = {
+        // ⚠️ Заготовка: коли зʼявиться реальний домен, впишіть його сюди
+        // (без завершального "/"), напр. "https://proshpalery.com.ua" —
+        // це автоматично підставиться в canonical, Open Graph, JSON-LD.
+        domain: "https://your-domain.com.ua",
+        brand: "PRO Шпалери",
+        city: "Львів",
+        phoneDisplay: "+380 97 585 94 52",
+        phoneRaw: "+380975859452",
+        email: "helen.decorlviv@gmail.com",
+        address: "вул. Стрийська, 108, Львів, 79000",
+        instagram: "https://instagram.com/pro_shpalery",
+        facebook: "https://www.facebook.com/share/165cXiePtM/",
+        telegramLink: "https://t.me/+380975859452",
+        viberLink: "viber://chat?number=%2B380975859452",
+        mapEmbedUrl:
+          "https://www.google.com/maps?q=PRO+%D0%A8%D0%BF%D0%B0%D0%BB%D0%B5%D1%80%D0%B8,+%D0%B2%D1%83%D0%BB.+%D0%A1%D1%82%D1%80%D0%B8%D0%B9%D1%81%D1%8C%D0%BA%D0%B0+108,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&output=embed",
+        tour3dUrl: "https://maps.app.goo.gl/Mcit1QZgmRCuZeEM7",
+        hours: [
+          ["Понеділок", "8:00 – 16:30"],
+          ["Вівторок", "8:00 – 16:30"],
+          ["Середа", "8:00 – 16:30"],
+          ["Четвер", "8:00 – 16:30"],
+          ["П'ятниця", "8:00 – 16:30"],
+          ["Субота", "10:00 – 13:00"],
+          ["Неділя", "вихідний"],
+        ],
+        priceFrom: "170 грн / м²",
+      };
+    </script>
+
+    <header>
+      <nav class="nav">
+        <a class="logo" href="#top"><span>PRO</span>ШПАЛЕРИ</a>
+        <ul class="nav-links">
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#assortment">Асортимент</a></li>
+          <li><a href="#price">Ціни й бренди</a></li>
+          <li><a href="#order">Замовлення</a></li>
+          <li><a href="#gallery">Шоурум</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <div class="nav-cta" style="display: flex; gap: 10px">
+          <button
+            class="btn"
+            onclick="openModal('Замовити поклейку')"
+            style="
+              padding: 12px 20px;
+              border: 1px solid var(--ink);
+              background: transparent;
+            "
+          >
+            Замовити поклейку
+          </button>
+          <button
+            class="btn btn-primary"
+            onclick="openModal()"
+            style="padding: 12px 22px"
+          >
+            Замовити консультацію
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ================= HERO ================= -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow">
+              Шоурум шпалер · Львів · 10+ років у справі
+            </div>
+            <h1>Шпалери,<br />які роблять<br /><em>інтер'єр</em> вашим</h1>
+            <p class="lead">
+              Флізелінові, вінілові, натуральні матеріали, панно та фотошпалери
+              на 3D-друку. Допомагаємо обрати оптимальний варіант — за
+              призначенням, доглядом і фактурою, і встановлюємо власною бригадою
+              майстрів.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="openModal()">
+                Замовити консультацію
+              </button>
+              <a class="btn btn-outline" href="#assortment"
+                >Дивитись асортимент</a
+              >
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><b>10+</b><span>років на ринку</span></div>
+              <div class="hero-stat">
+                <b>170 грн/м²</b><span>стартова ціна</span>
+              </div>
+              <div class="hero-stat">
+                <b>Своя</b><span>бригада монтажу</span>
+              </div>
+              <div class="hero-stat">
+                <b>Україна</b><span>доставка по країні</span>
+              </div>
+            </div>
+          </div>
+          <div class="swatch-fan">
+            <div
+              class="swatch"
+              style="background-image: url('images/swatches-blue.jpg')"
+            ></div>
+            <div
+              class="swatch"
+              style="background-image: url('images/swatches-gold.jpg')"
+            ></div>
+            <div
+              class="swatch"
+              style="background-image: url('images/swatches-green.jpg')"
+            ></div>
+            <div
+              class="swatch"
+              style="background-image: url('images/hero-blossom.jpg')"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= СМУГА ================= -->
+      <div class="stripe">
+        <div class="wrap">
+          <div class="stripe-item">
+            <span class="dot"></span>Індивідуальний дизайн + фотошпалери
+          </div>
+          <div class="stripe-item">
+            <span class="dot"></span>Доставка по Україні
+          </div>
+          <div class="stripe-item">
+            <span class="dot"></span>Шоурум з паркінгом
+          </div>
+          <div class="stripe-item">
+            <span class="dot"></span>Європейські та американські бренди
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= ПРО НАС ================= -->
+      <section id="about">
+        <div class="wrap">
+          <div class="eyebrow">Про нас</div>
+          <h2 class="reveal" style="max-width: 760px">
+            Шоурум, де можна побачити, доторкнутись<br />і уявити свою кімнату
+            наперед
+          </h2>
+          <p class="lead reveal">
+            У шоурумі ви переглядаєте зразки, порівнюєте текстури, обговорюєте
+            побажання і одразу бачите, як усе виглядає в реальному просторі — з
+            паркінгом біля входу та щирою консультацією щодо бюджету.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= АСОРТИМЕНТ ================= -->
+      <section id="assortment">
+        <div class="wrap">
+          <div class="eyebrow reveal">У нас ви знайдете</div>
+          <h2 class="reveal">Різні типи шпалер</h2>
+          <p class="lead reveal">
+            П'ять напрямів, серед яких завжди знайдеться рішення під ваш простір
+            і бюджет.
+          </p>
+
+          <div class="assort-grid reveal-stagger">
+            <div class="assort-card" onclick="openGallery('flizelinovi')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/flizelinovi/flizelin-1.jpg"
+                  alt="Флізелінові шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">01</div>
+                <div>
+                  <h3>Флізелінові</h3>
+                  <p>Щільні, стабільні, легко клеяться</p>
+                </div>
+              </div>
+            </div>
+            <div class="assort-card" onclick="openGallery('vinilovi')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/vinilovi/vinil-1.jpg"
+                  alt="Вінілові шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">02</div>
+                <div>
+                  <h3>Вінілові</h3>
+                  <p>Стійкі до вологи та миття</p>
+                </div>
+              </div>
+            </div>
+            <div class="assort-card" onclick="openGallery('naturalni')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/naturalni/natural-1.jpg"
+                  alt="Натуральні шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">03</div>
+                <div>
+                  <h3>Натуральні</h3>
+                  <p>Текстиль, шпон, флок, солома</p>
+                </div>
+              </div>
+            </div>
+            <div class="assort-card" onclick="openGallery('panno')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/panno/panno-1.jpg"
+                  alt="Панно, фотошпалери, 3D — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">04</div>
+                <div>
+                  <h3>Панно, фотошпалери, 3D</h3>
+                  <p>Індивідуальні розміри й сюжети</p>
+                </div>
+              </div>
+            </div>
+            <div class="assort-card" onclick="openGallery('farbuvannya')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/farbuvannya/farbuvannya-1.jpg"
+                  alt="Шпалери під фарбування — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">05</div>
+                <div>
+                  <h3>Під фарбування</h3>
+                  <p>Змінюйте колір, коли захочете</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЗАМОВИТИ ПОКЛЕЙКУ ================= -->
+      <section class="install-cta">
+        <div class="wrap">
+          <div class="reveal">
+            <h2>Клеїмо самі — власна бригада майстрів</h2>
+            <p>
+              Не просто продаємо шпалери, а й доклеюємо їх власною бригадою:
+              рівні стики, акуратні кути, без переплат стороннім виконавцям.
+              Виїзд, консультація на місці та монтаж — одним замовленням.
+            </p>
+            <button class="btn btn-primary" onclick="openModal('Замовити поклейку')">
+              Замовити поклейку
+            </button>
+          </div>
+          <div class="install-photos reveal">
+            <img src="images/montage/montazh-1.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+            <img src="images/montage/montazh-3.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+            <img src="images/montage/montazh-5.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЦІНИ Й БРЕНДИ ================= -->
+      <section id="price" class="price-section">
+        <div class="wrap">
+          <div class="eyebrow reveal">Прайс і бренди</div>
+          <h2 class="reveal" style="color: var(--paper)">
+            Чесна ціна.<br />Перевірені виробники.
+          </h2>
+          <div class="price-grid reveal-stagger">
+            <div class="price-card">
+              <div class="big">від 170 грн/м²</div>
+              <p>Шпалери в широкому діапазоні цін</p>
+            </div>
+            <div class="price-card">
+              <div class="big">EU · US</div>
+              <p>Колекції європейських та американських виробників</p>
+            </div>
+            <div class="price-card">
+              <div class="big">Premium + базові</div>
+              <p>Преміум-сегмент і базові рішення в одному шоурумі</p>
+            </div>
+            <div class="price-card">
+              <div class="big">Чесно</div>
+              <p>Завжди чесна консультація щодо бюджету</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЯК ЗАМОВИТИ ================= -->
+      <section id="order">
+        <div class="wrap">
+          <div class="eyebrow reveal">Як відбувається замовлення</div>
+          <h2 class="reveal" style="max-width: 760px">
+            Простий і зрозумілий процес — ось коротко, як усе працює
+          </h2>
+
+          <div class="steps reveal-stagger">
+            <div class="step">
+              <div class="step-num">01</div>
+              <div>
+                <h3>Ознайомлення з асортиментом</h3>
+                <p>
+                  У шоурумі ви переглядаєте зразки, порівнюєте текстури,
+                  обговорюєте побажання та одразу бачите, як усе виглядає в
+                  реальному просторі.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">02</div>
+              <div>
+                <h3>Підбір і розрахунок</h3>
+                <p>
+                  Допомагаємо визначитись з матеріалом за призначенням, доглядом
+                  і фактурою, рахуємо потрібну кількість і бюджет.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">03</div>
+              <div>
+                <h3>Замовлення та доставка</h3>
+                <p>
+                  Оформлюємо замовлення та організовуємо доставку по Львову й по
+                  всій Україні.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">04</div>
+              <div>
+                <h3>Монтаж власною бригадою</h3>
+                <p>
+                  За потреби наші майстри виконують поклейку професійно та
+                  акуратно.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ГАЛЕРЕЯ ================= -->
+      <section id="gallery" style="background: var(--cream)">
+        <div class="wrap">
+          <div class="eyebrow reveal">Шоурум</div>
+          <h2 class="reveal">Погляньте, де ми працюємо</h2>
+
+          <div class="gallery-grid reveal-stagger">
+            <img
+              class="g1"
+              src="images/gallery-couch.jpg"
+              alt="Інтер'єр шоуруму PRO Шпалери"
+            />
+            <img
+              src="images/gallery-molding.jpg"
+              alt="Стенд зі зразками молдингів та шпалер"
+            />
+            <img src="images/book-open.jpg" alt="Каталог шпалер" />
+            <img
+              class="g2"
+              src="images/storefront-1.jpg"
+              alt="Фасад шоуруму PRO Шпалери у Львові"
+            />
+            <img
+              src="images/swatches-gold.jpg"
+              alt="Зразки шпалер, золота колекція"
+            />
+            <img
+              src="images/swatches-green.jpg"
+              alt="Зразки шпалер, зелена колекція"
+            />
+          </div>
+
+          <div class="tour-card reveal">
+            <div>
+              <h3>3D-тур по шоуруму</h3>
+              <p>
+                Прогуляйтесь павільйоном PRO Шпалери онлайн, ще до візиту —
+                панорама Google Maps.
+              </p>
+            </div>
+            <a
+              class="btn btn-light"
+              href="__TOUR3D__"
+              target="_blank"
+              rel="noopener"
+              >Відкрити 3D-тур</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= КОНТАКТИ ================= -->
+      <section id="contacts">
+        <div class="wrap">
+          <div class="eyebrow reveal">Контакти</div>
+          <h2 class="reveal">Завітайте в шоурум<br />або напишіть нам</h2>
+
+          <div class="contact-grid reveal">
+            <div>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div class="ic">☎</div>
+                  <div>
+                    <b>Телефон / Telegram / Viber</b
+                    ><a href="tel:__PHONE_RAW__">__PHONE_DISPLAY__</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="ic">✉</div>
+                  <div>
+                    <b>Email</b><a href="mailto:__EMAIL__">__EMAIL__</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="ic">📍</div>
+                  <div><b>Адреса</b><span>__ADDRESS__</span></div>
+                </div>
+              </div>
+
+              <table class="hours-table" id="hoursTable"></table>
+
+              <div class="social-row">
+                <a
+                  href="__INSTAGRAM__"
+                  target="_blank"
+                  rel="noopener"
+                  title="Instagram"
+                  >IG</a
+                >
+                <a
+                  href="__FACEBOOK__"
+                  target="_blank"
+                  rel="noopener"
+                  title="Facebook"
+                  >FB</a
+                >
+                <a
+                  href="__TELEGRAM__"
+                  target="_blank"
+                  rel="noopener"
+                  title="Telegram"
+                  >TG</a
+                >
+                <a href="__VIBER__" title="Viber">VB</a>
+              </div>
+            </div>
+
+            <iframe
+              class="map-frame"
+              src="__MAP_EMBED__"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-row">
+        <div>© <span id="year"></span> PRO Шпалери — Львів</div>
+        <div>Сайт-візитка</div>
+      </div>
+    </footer>
+
+    <!-- ================= ПЛАВАЮЧА КНОПКА ================= -->
+    <button
+      class="fab"
+      onclick="openModal()"
+      aria-label="Замовити консультацію"
+    >
+      ✆
+    </button>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <h3>Як вам зручно зв'язатись?</h3>
+        <p>Оберіть спосіб — відповімо якнайшвидше.</p>
+        <div class="modal-options">
+          <a href="tel:__PHONE_RAW__">☎ Подзвонити — __PHONE_DISPLAY__</a>
+          <a href="__TELEGRAM__" target="_blank" rel="noopener"
+            >✈ Написати в Telegram</a
+          >
+          <a href="__VIBER__">💬 Написати у Viber</a>
+          <a href="mailto:__EMAIL__">✉ Написати на пошту</a>
+        </div>
+        <button class="modal-close" onclick="closeModal()">Закрити</button>
+      </div>
+    </div>
+
+    <!-- ================= ЛАЙТБОКС-ГАЛЕРЕЯ ПО ТИПАХ ШПАЛЕР ================= -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <div class="lightbox-box">
+        <div class="lightbox-head">
+          <h3 id="lightboxTitle">Шпалери</h3>
+          <button class="lightbox-close" onclick="closeGallery()">✕</button>
+        </div>
+        <div class="lightbox-main">
+          <img id="lightboxImg" src="" alt="" />
+          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">‹</button>
+          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">›</button>
+        </div>
+        <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+        <div class="lightbox-cta">
+          <button class="btn btn-primary" onclick="openModal('Замовити поклейку')">
+            Замовити поклейку цих шпалер
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---- підстановка даних із SITE у розмітку ----
+      function fill() {
+        document.body.innerHTML = document.body.innerHTML
+          .replaceAll("__PHONE_RAW__", SITE.phoneRaw)
+          .replaceAll("__PHONE_DISPLAY__", SITE.phoneDisplay)
+          .replaceAll("__EMAIL__", SITE.email)
+          .replaceAll("__ADDRESS__", SITE.address)
+          .replaceAll("__INSTAGRAM__", SITE.instagram)
+          .replaceAll("__FACEBOOK__", SITE.facebook)
+          .replaceAll("__TELEGRAM__", SITE.telegramLink)
+          .replaceAll("__VIBER__", SITE.viberLink)
+          .replaceAll("__MAP_EMBED__", SITE.mapEmbedUrl)
+          .replaceAll("__TOUR3D__", SITE.tour3dUrl);
+
+        // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
+        document.head.innerHTML = document.head.innerHTML.replaceAll(
+          "__DOMAIN__",
+          SITE.domain
+        );
+      }
+      fill();
+
+      // ---- SEO: schema.org LocalBusiness (JSON-LD) ----
+      function injectStructuredData() {
+        const data = {
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          name: SITE.brand,
+          image: `${SITE.domain}/images/og-image.jpg`,
+          url: `${SITE.domain}/`,
+          telephone: SITE.phoneRaw,
+          email: SITE.email,
+          priceRange: SITE.priceFrom,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: SITE.address,
+            addressLocality: SITE.city,
+            addressCountry: "UA",
+          },
+          sameAs: [SITE.instagram, SITE.facebook].filter(Boolean),
+          openingHoursSpecification: SITE.hours
+            .filter(([, time]) => time !== "вихідний")
+            .map(([day, time]) => {
+              const [opens, closes] = time
+                .replaceAll("–", "-")
+                .split("-")
+                .map((s) => s.trim());
+              return {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: day,
+                opens,
+                closes,
+              };
+            }),
+        };
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      }
+      injectStructuredData();
+
+      // ---- графік роботи ----
+      const hoursTable = document.getElementById("hoursTable");
+      SITE.hours.forEach(([day, time]) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${day}</td><td>${time}</td>`;
+        hoursTable.appendChild(tr);
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ---- модалка ----
+      function openModal(title) {
+        const heading = document.querySelector("#modalOverlay h3");
+        if (heading) {
+          heading.textContent = title || "Як вам зручно зв'язатись?";
+        }
+        document.getElementById("modalOverlay").classList.add("open");
+      }
+      function closeModal() {
+        document.getElementById("modalOverlay").classList.remove("open");
+      }
+      document.getElementById("modalOverlay").addEventListener("click", (e) => {
+        if (e.target.id === "modalOverlay") closeModal();
+      });
+
+      // ---- лайтбокс-галерея по типах шпалер ----
+      const GALLERIES = {
+        flizelinovi: {
+          title: "Флізелінові шпалери",
+          images: [
+            "images/assortment/flizelinovi/flizelin-1.jpg",
+            "images/assortment/flizelinovi/flizelin-2.jpg",
+            "images/assortment/flizelinovi/flizelin-3.jpg",
+          ],
+        },
+        vinilovi: {
+          title: "Вінілові шпалери",
+          images: [
+            "images/assortment/vinilovi/vinil-1.jpg",
+            "images/assortment/vinilovi/vinil-2.jpg",
+            "images/assortment/vinilovi/vinil-3.jpg",
+          ],
+        },
+        naturalni: {
+          title: "Натуральні шпалери",
+          images: ["images/assortment/naturalni/natural-1.jpg"],
+        },
+        panno: {
+          title: "Панно, фотошпалери, 3D",
+          images: [
+            "images/assortment/panno/panno-1.jpg",
+            "images/assortment/panno/panno-2.jpg",
+            "images/assortment/panno/panno-3.jpg",
+            "images/assortment/panno/panno-4.jpg",
+            "images/assortment/panno/panno-5.jpg",
+            "images/assortment/panno/panno-6.jpg",
+            "images/assortment/panno/panno-7.jpg",
+            "images/assortment/panno/panno-8.jpg",
+          ],
+        },
+        farbuvannya: {
+          title: "Шпалери під фарбування",
+          images: [
+            "images/assortment/farbuvannya/farbuvannya-1.jpg",
+            "images/assortment/farbuvannya/farbuvannya-2.jpg",
+            "images/assortment/farbuvannya/farbuvannya-3.jpg",
+          ],
+        },
+      };
+
+      let currentGallery = null;
+      let currentIndex = 0;
+
+      function renderLightbox() {
+        const g = GALLERIES[currentGallery];
+        document.getElementById("lightboxTitle").textContent = g.title;
+        document.getElementById("lightboxImg").src = g.images[currentIndex];
+        document.getElementById("lightboxImg").alt = g.title;
+
+        const thumbs = document.getElementById("lightboxThumbs");
+        thumbs.innerHTML = "";
+        g.images.forEach((src, i) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = g.title + " — фото " + (i + 1);
+          if (i === currentIndex) img.classList.add("active");
+          img.onclick = () => {
+            currentIndex = i;
+            renderLightbox();
+          };
+          thumbs.appendChild(img);
+        });
+      }
+
+      function openGallery(type) {
+        if (!GALLERIES[type]) return;
+        currentGallery = type;
+        currentIndex = 0;
+        renderLightbox();
+        document.getElementById("lightboxOverlay").classList.add("open");
+      }
+
+      function closeGallery() {
+        document.getElementById("lightboxOverlay").classList.remove("open");
+      }
+
+      function galleryStep(dir) {
+        const g = GALLERIES[currentGallery];
+        currentIndex = (currentIndex + dir + g.images.length) % g.images.length;
+        renderLightbox();
+      }
+
+      document
+        .getElementById("lightboxOverlay")
+        .addEventListener("click", (e) => {
+          if (e.target.id === "lightboxOverlay") closeGallery();
+        });
+
+      document.addEventListener("keydown", (e) => {
+        if (!document.getElementById("lightboxOverlay").classList.contains("open"))
+          return;
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") galleryStep(1);
+        if (e.key === "ArrowLeft") galleryStep(-1);
+      });
+
+      // ---- анімації появи елементів при скролі ----
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        document
+          .querySelectorAll(".reveal, .reveal-stagger")
+          .forEach((el) => el.classList.add("in-view"));
+      }
+
+      // ---- parallax: нахил і прокрутка "віяла" зразків у hero ----
+      if (!prefersReducedMotion) {
+        const fan = document.querySelector(".swatch-fan");
+        if (fan) {
+          let idleAngle = 0;
+          let hovering = false;
+
+          fan.addEventListener("mousemove", (e) => {
+            hovering = true;
+            const rect = fan.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            fan.style.setProperty("--fan-ry", `${x * 14}deg`);
+            fan.style.setProperty("--fan-rx", `${-y * 14}deg`);
+          });
+          fan.addEventListener("mouseleave", () => {
+            hovering = false;
+          });
+
+          function idleTilt() {
+            if (!hovering) {
+              idleAngle += 0.006;
+              fan.style.setProperty(
+                "--fan-ry",
+                `${Math.sin(idleAngle) * 4}deg`
+              );
+              fan.style.setProperty(
+                "--fan-rx",
+                `${Math.cos(idleAngle * 0.8) * 2}deg`
+              );
+            }
+            requestAnimationFrame(idleTilt);
+          }
+          requestAnimationFrame(idleTilt);
+
+          let ticking = false;
+          window.addEventListener("scroll", () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const offset = Math.min(window.scrollY * 0.12, 50);
+                fan.style.setProperty("--fan-ty", `${offset}px`);
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
