@@ -320,6 +320,12 @@
           display: block;
         }
       }
+      @media (max-width: 480px) {
+        .nav-cta button {
+          padding: 10px 14px !important;
+          font-size: 12px;
+        }
+      }
 
       /* ============================================================
      HERO
@@ -517,7 +523,6 @@
       }
       .assort-card {
         background: var(--paper);
-        padding: 34px 22px;
         min-height: 230px;
         display: flex;
         flex-direction: column;
@@ -527,10 +532,53 @@
           background 0.25s ease,
           transform 0.25s ease,
           border-color 0.25s ease;
+        cursor: pointer;
+        overflow: hidden;
       }
       .assort-card:hover {
         background: var(--cream);
         transform: translateY(-6px);
+      }
+      .assort-cover {
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+      }
+      .assort-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .assort-card:hover .assort-cover img {
+        transform: scale(1.08);
+      }
+      .assort-cover::after {
+        content: "Переглянути фото →";
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 8px 14px;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: #fff;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+      .assort-card:hover .assort-cover::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .assort-body {
+        padding: 22px 22px 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
       }
       .assort-num {
         font-family: var(--font-serif);
@@ -596,6 +644,166 @@
       }
       #assortment .assort-card p {
         color: rgba(251, 248, 241, 0.62);
+      }
+
+      /* ---------- Блок "Замовити поклейку" ---------- */
+      .install-cta {
+        background: var(--yellow);
+        padding: 56px 0;
+      }
+      .install-cta .wrap {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .install-cta h2 {
+        color: var(--ink);
+        max-width: 560px;
+      }
+      .install-cta p {
+        color: rgba(22, 19, 15, 0.75);
+        margin-top: 12px;
+        max-width: 520px;
+        font-size: 15px;
+      }
+      .install-cta .btn-primary {
+        background: var(--ink);
+        color: var(--paper);
+        margin-top: 22px;
+      }
+      .install-cta .btn-primary:hover {
+        background: #2a241c;
+      }
+      .install-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .install-photos img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+      .install-photos img:first-child {
+        grid-column: 1 / -1;
+        height: 150px;
+      }
+      @media (max-width: 860px) {
+        .install-cta .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- Лайтбокс-галерея по типу шпалер ---------- */
+      .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 9, 0.92);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        padding: 24px;
+      }
+      .lightbox-overlay.open {
+        display: flex;
+      }
+      .lightbox-box {
+        max-width: 900px;
+        width: 100%;
+      }
+      .lightbox-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .lightbox-head h3 {
+        color: var(--paper);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 22px;
+        font-weight: 400;
+      }
+      .lightbox-close {
+        background: none;
+        border: 1px solid rgba(251, 248, 241, 0.3);
+        color: var(--paper);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.2s;
+      }
+      .lightbox-close:hover {
+        background: rgba(251, 248, 241, 0.15);
+      }
+      .lightbox-main {
+        position: relative;
+        background: #000;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .lightbox-main img {
+        width: 100%;
+        max-height: 62vh;
+        object-fit: contain;
+        display: block;
+        background: #000;
+      }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .lightbox-nav:hover {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+      .lightbox-prev {
+        left: 12px;
+      }
+      .lightbox-next {
+        right: 12px;
+      }
+      .lightbox-thumbs {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .lightbox-thumbs img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 2px;
+        cursor: pointer;
+        opacity: 0.55;
+        border: 2px solid transparent;
+        transition:
+          opacity 0.2s,
+          border-color 0.2s;
+        flex-shrink: 0;
+      }
+      .lightbox-thumbs img.active {
+        opacity: 1;
+        border-color: var(--yellow);
+      }
+      .lightbox-cta {
+        margin-top: 18px;
+        text-align: center;
       }
 
       /* ============================================================
@@ -987,7 +1195,18 @@
           <li><a href="#gallery">Шоурум</a></li>
           <li><a href="#contacts">Контакти</a></li>
         </ul>
-        <div class="nav-cta">
+        <div class="nav-cta" style="display: flex; gap: 10px">
+          <button
+            class="btn"
+            onclick="openModal('Замовити поклейку')"
+            style="
+              padding: 12px 20px;
+              border: 1px solid var(--ink);
+              background: transparent;
+            "
+          >
+            Замовити поклейку
+          </button>
           <button
             class="btn btn-primary"
             onclick="openModal()"
@@ -1107,41 +1326,123 @@
           </p>
 
           <div class="assort-grid reveal-stagger">
-            <div class="assort-card">
-              <div class="assort-num">01</div>
-              <div>
-                <h3>Флізелінові</h3>
-                <p>Щільні, стабільні, легко клеяться</p>
+            <div class="assort-card" onclick="openGallery('flizelinovi')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/flizelinovi/flizelin-1.jpg"
+                  alt="Флізелінові шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">01</div>
+                <div>
+                  <h3>Флізелінові</h3>
+                  <p>Щільні, стабільні, легко клеяться</p>
+                </div>
               </div>
             </div>
-            <div class="assort-card">
-              <div class="assort-num">02</div>
-              <div>
-                <h3>Вінілові</h3>
-                <p>Стійкі до вологи та миття</p>
+            <div class="assort-card" onclick="openGallery('vinilovi')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/vinilovi/vinil-1.jpg"
+                  alt="Вінілові шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">02</div>
+                <div>
+                  <h3>Вінілові</h3>
+                  <p>Стійкі до вологи та миття</p>
+                </div>
               </div>
             </div>
-            <div class="assort-card">
-              <div class="assort-num">03</div>
-              <div>
-                <h3>Натуральні</h3>
-                <p>Текстиль, шпон, флок, солома</p>
+            <div class="assort-card" onclick="openGallery('naturalni')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/naturalni/natural-1.jpg"
+                  alt="Натуральні шпалери — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">03</div>
+                <div>
+                  <h3>Натуральні</h3>
+                  <p>Текстиль, шпон, флок, солома</p>
+                </div>
               </div>
             </div>
-            <div class="assort-card">
-              <div class="assort-num">04</div>
-              <div>
-                <h3>Панно, фотошпалери, 3D</h3>
-                <p>Індивідуальні розміри й сюжети</p>
+            <div class="assort-card" onclick="openGallery('panno')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/panno/panno-1.jpg"
+                  alt="Панно, фотошпалери, 3D — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">04</div>
+                <div>
+                  <h3>Панно, фотошпалери, 3D</h3>
+                  <p>Індивідуальні розміри й сюжети</p>
+                </div>
               </div>
             </div>
-            <div class="assort-card">
-              <div class="assort-num">05</div>
-              <div>
-                <h3>Під фарбування</h3>
-                <p>Змінюйте колір, коли захочете</p>
+            <div class="assort-card" onclick="openGallery('farbuvannya')">
+              <div class="assort-cover">
+                <img
+                  src="images/assortment/farbuvannya/farbuvannya-1.jpg"
+                  alt="Шпалери під фарбування — приклад"
+                  loading="lazy"
+                />
+              </div>
+              <div class="assort-body">
+                <div class="assort-num">05</div>
+                <div>
+                  <h3>Під фарбування</h3>
+                  <p>Змінюйте колір, коли захочете</p>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ЗАМОВИТИ ПОКЛЕЙКУ ================= -->
+      <section class="install-cta">
+        <div class="wrap">
+          <div class="reveal">
+            <h2>Клеїмо самі — власна бригада майстрів</h2>
+            <p>
+              Не просто продаємо шпалери, а й доклеюємо їх власною бригадою:
+              рівні стики, акуратні кути, без переплат стороннім виконавцям.
+              Виїзд, консультація на місці та монтаж — одним замовленням.
+            </p>
+            <button
+              class="btn btn-primary"
+              onclick="openModal('Замовити поклейку')"
+            >
+              Замовити поклейку
+            </button>
+          </div>
+          <div class="install-photos reveal">
+            <img
+              src="images/montage/montazh-1.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
+            <img
+              src="images/montage/montazh-3.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
+            <img
+              src="images/montage/montazh-5.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -1378,6 +1679,34 @@
       </div>
     </div>
 
+    <!-- ================= ЛАЙТБОКС-ГАЛЕРЕЯ ПО ТИПАХ ШПАЛЕР ================= -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <div class="lightbox-box">
+        <div class="lightbox-head">
+          <h3 id="lightboxTitle">Шпалери</h3>
+          <button class="lightbox-close" onclick="closeGallery()">✕</button>
+        </div>
+        <div class="lightbox-main">
+          <img id="lightboxImg" src="" alt="" />
+          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">
+            ‹
+          </button>
+          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">
+            ›
+          </button>
+        </div>
+        <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+        <div class="lightbox-cta">
+          <button
+            class="btn btn-primary"
+            onclick="openModal('Замовити поклейку')"
+          >
+            Замовити поклейку цих шпалер
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
       // ---- підстановка даних із SITE у розмітку ----
       function fill() {
@@ -1452,7 +1781,11 @@
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // ---- модалка ----
-      function openModal() {
+      function openModal(title) {
+        const heading = document.querySelector("#modalOverlay h3");
+        if (heading) {
+          heading.textContent = title || "Як вам зручно зв'язатись?";
+        }
         document.getElementById("modalOverlay").classList.add("open");
       }
       function closeModal() {
@@ -1460,6 +1793,109 @@
       }
       document.getElementById("modalOverlay").addEventListener("click", (e) => {
         if (e.target.id === "modalOverlay") closeModal();
+      });
+
+      // ---- лайтбокс-галерея по типах шпалер ----
+      const GALLERIES = {
+        flizelinovi: {
+          title: "Флізелінові шпалери",
+          images: [
+            "images/assortment/flizelinovi/flizelin-1.jpg",
+            "images/assortment/flizelinovi/flizelin-2.jpg",
+            "images/assortment/flizelinovi/flizelin-3.jpg",
+          ],
+        },
+        vinilovi: {
+          title: "Вінілові шпалери",
+          images: [
+            "images/assortment/vinilovi/vinil-1.jpg",
+            "images/assortment/vinilovi/vinil-2.jpg",
+            "images/assortment/vinilovi/vinil-3.jpg",
+          ],
+        },
+        naturalni: {
+          title: "Натуральні шпалери",
+          images: ["images/assortment/naturalni/natural-1.jpg"],
+        },
+        panno: {
+          title: "Панно, фотошпалери, 3D",
+          images: [
+            "images/assortment/panno/panno-1.jpg",
+            "images/assortment/panno/panno-2.jpg",
+            "images/assortment/panno/panno-3.jpg",
+            "images/assortment/panno/panno-4.jpg",
+            "images/assortment/panno/panno-5.jpg",
+            "images/assortment/panno/panno-6.jpg",
+            "images/assortment/panno/panno-7.jpg",
+            "images/assortment/panno/panno-8.jpg",
+          ],
+        },
+        farbuvannya: {
+          title: "Шпалери під фарбування",
+          images: [
+            "images/assortment/farbuvannya/farbuvannya-1.jpg",
+            "images/assortment/farbuvannya/farbuvannya-2.jpg",
+            "images/assortment/farbuvannya/farbuvannya-3.jpg",
+          ],
+        },
+      };
+
+      let currentGallery = null;
+      let currentIndex = 0;
+
+      function renderLightbox() {
+        const g = GALLERIES[currentGallery];
+        document.getElementById("lightboxTitle").textContent = g.title;
+        document.getElementById("lightboxImg").src = g.images[currentIndex];
+        document.getElementById("lightboxImg").alt = g.title;
+
+        const thumbs = document.getElementById("lightboxThumbs");
+        thumbs.innerHTML = "";
+        g.images.forEach((src, i) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = g.title + " — фото " + (i + 1);
+          if (i === currentIndex) img.classList.add("active");
+          img.onclick = () => {
+            currentIndex = i;
+            renderLightbox();
+          };
+          thumbs.appendChild(img);
+        });
+      }
+
+      function openGallery(type) {
+        if (!GALLERIES[type]) return;
+        currentGallery = type;
+        currentIndex = 0;
+        renderLightbox();
+        document.getElementById("lightboxOverlay").classList.add("open");
+      }
+
+      function closeGallery() {
+        document.getElementById("lightboxOverlay").classList.remove("open");
+      }
+
+      function galleryStep(dir) {
+        const g = GALLERIES[currentGallery];
+        currentIndex = (currentIndex + dir + g.images.length) % g.images.length;
+        renderLightbox();
+      }
+
+      document
+        .getElementById("lightboxOverlay")
+        .addEventListener("click", (e) => {
+          if (e.target.id === "lightboxOverlay") closeGallery();
+        });
+
+      document.addEventListener("keydown", (e) => {
+        if (
+          !document.getElementById("lightboxOverlay").classList.contains("open")
+        )
+          return;
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") galleryStep(1);
+        if (e.key === "ArrowLeft") galleryStep(-1);
       });
 
       // ---- анімації появи елементів при скролі ----
