@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="uk_UA" />
     <meta property="og:site_name" content="PRO Шпалери" />
-    <meta property="og:title" content="PRO Шпалери — шоурум шпалер у Львові" />
+    <meta
+      property="og:title"
+      content="PRO Шпалери — шоурум шпалер у Львові"
+    />
     <meta
       property="og:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
@@ -36,7 +39,10 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PRO Шпалери — шоурум шпалер у Львові" />
+    <meta
+      name="twitter:title"
+      content="PRO Шпалери — шоурум шпалер у Львові"
+    />
     <meta
       name="twitter:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Доставка по Україні."
@@ -88,8 +94,7 @@
         .reveal {
           opacity: 0;
           transform: translateY(30px);
-          transition:
-            opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+          transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.in-view {
@@ -99,8 +104,7 @@
         .reveal-stagger > * {
           opacity: 0;
           transform: translateY(26px);
-          transition:
-            opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal-stagger.in-view > * {
@@ -228,9 +232,7 @@
         border-radius: 2px;
         cursor: pointer;
         border: 2px solid transparent;
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
       }
       .btn:hover {
         transform: translateY(-2px);
@@ -272,9 +274,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 24px;
-        max-width: 1180px;
+        padding: 16px 32px;
+        max-width: 1280px;
         margin: 0 auto;
+        gap: 24px;
       }
       .logo {
         font-family: var(--font-display);
@@ -287,11 +290,12 @@
       }
       .nav-links {
         display: flex;
-        gap: 28px;
+        gap: 38px;
         font-weight: 600;
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 0.03em;
+        white-space: nowrap;
       }
       .nav-links a {
         opacity: 0.75;
@@ -303,27 +307,137 @@
       .nav-cta {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 10px;
       }
+      .btn-header {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 11px 18px;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 3px;
+        white-space: nowrap;
+        transition: background 0.2s, transform 0.15s, border-color 0.2s;
+        cursor: pointer;
+      }
+      .btn-header:active {
+        transform: scale(0.97);
+      }
+      .btn-header-outline {
+        background: transparent;
+        border: 1.5px solid var(--ink);
+        color: var(--ink);
+      }
+      .btn-header-outline:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn-header-solid {
+        background: var(--yellow);
+        border: 1.5px solid var(--yellow);
+        color: var(--ink);
+      }
+      .btn-header-solid:hover {
+        background: #e0b31f;
+        border-color: #e0b31f;
+      }
+      .btn-header .ico {
+        font-size: 14px;
+        line-height: 1;
+      }
+
       .burger {
         display: none;
         background: none;
         border: none;
-        font-size: 26px;
         cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        position: relative;
+        flex-shrink: 0;
       }
-      @media (max-width: 900px) {
+      .burger span {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        height: 2px;
+        background: var(--ink);
+        transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+      }
+      .burger span:nth-child(1) {
+        top: 13px;
+      }
+      .burger span:nth-child(2) {
+        top: 19px;
+      }
+      .burger span:nth-child(3) {
+        top: 25px;
+      }
+      .burger.open span:nth-child(1) {
+        top: 19px;
+        transform: rotate(45deg);
+      }
+      .burger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.open span:nth-child(3) {
+        top: 19px;
+        transform: rotate(-45deg);
+      }
+
+      .mobile-menu {
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        transition: max-height 0.3s ease;
+      }
+      .mobile-menu.open {
+        max-height: 520px;
+      }
+      .mobile-menu-inner {
+        padding: 6px 24px 22px;
+        display: flex;
+        flex-direction: column;
+      }
+      .mobile-menu a.mlink {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+        font-weight: 600;
+        font-size: 15px;
+      }
+      .mobile-menu .nav-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .mobile-menu .btn-header {
+        justify-content: center;
+        padding: 14px 18px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 1080px) {
         .nav-links {
+          display: none;
+        }
+        .nav > .nav-cta {
           display: none;
         }
         .burger {
           display: block;
         }
+        .mobile-menu {
+          display: block;
+        }
       }
-      @media (max-width: 480px) {
-        .nav-cta button {
-          padding: 10px 14px !important;
-          font-size: 12px;
+      @media (max-width: 380px) {
+        .logo {
+          font-size: 17px;
         }
       }
 
@@ -332,8 +446,7 @@
      ============================================================ */
       .hero {
         padding: 72px 0 40px;
-        background:
-          radial-gradient(
+        background: radial-gradient(
             circle at 88% 8%,
             rgba(244, 196, 48, 0.35),
             transparent 45%
@@ -427,9 +540,7 @@
         background-size: cover;
         background-position: center;
         transform-origin: bottom center;
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.35s ease;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
       }
       .swatch:nth-child(1) {
         transform: translateX(-50%) rotate(-18deg) translateY(10px);
@@ -528,9 +639,7 @@
         flex-direction: column;
         justify-content: space-between;
         border-left: 3px solid transparent;
-        transition:
-          background 0.25s ease,
-          transform 0.25s ease,
+        transition: background 0.25s ease, transform 0.25s ease,
           border-color 0.25s ease;
         cursor: pointer;
         overflow: hidden;
@@ -565,9 +674,7 @@
         background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
         opacity: 0;
         transform: translateY(6px);
-        transition:
-          opacity 0.25s ease,
-          transform 0.25s ease;
+        transition: opacity 0.25s ease, transform 0.25s ease;
       }
       .assort-card:hover .assort-cover::after {
         opacity: 1;
@@ -792,9 +899,7 @@
         cursor: pointer;
         opacity: 0.55;
         border: 2px solid transparent;
-        transition:
-          opacity 0.2s,
-          border-color 0.2s;
+        transition: opacity 0.2s, border-color 0.2s;
         flex-shrink: 0;
       }
       .lightbox-thumbs img.active {
@@ -1162,6 +1267,11 @@
         city: "Львів",
         phoneDisplay: "+380 97 585 94 52",
         phoneRaw: "+380975859452",
+        // окремий номер для замовлення поклейки (кнопка "Замовити поклейку")
+        installPhoneDisplay: "+380 67 499 93 33",
+        installPhoneRaw: "+380674999333",
+        installTelegramLink: "https://t.me/+380674999333",
+        installViberLink: "viber://chat?number=%2B380674999333",
         email: "helen.decorlviv@gmail.com",
         address: "вул. Стрийська, 108, Львів, 79000",
         instagram: "https://instagram.com/pro_shpalery",
@@ -1195,27 +1305,36 @@
           <li><a href="#gallery">Шоурум</a></li>
           <li><a href="#contacts">Контакти</a></li>
         </ul>
-        <div class="nav-cta" style="display: flex; gap: 10px">
-          <button
-            class="btn"
-            onclick="openModal('Замовити поклейку')"
-            style="
-              padding: 12px 20px;
-              border: 1px solid var(--ink);
-              background: transparent;
-            "
-          >
-            Замовити поклейку
+        <div class="nav-cta">
+          <button class="btn-header btn-header-outline" onclick="openModal('install')">
+            <span class="ico">🛠</span>Замовити поклейку
           </button>
-          <button
-            class="btn btn-primary"
-            onclick="openModal()"
-            style="padding: 12px 22px"
-          >
-            Замовити консультацію
+          <button class="btn-header btn-header-solid" onclick="openModal()">
+            <span class="ico">☎</span>Замовити консультацію
           </button>
         </div>
+        <button class="burger" id="burgerBtn" aria-label="Меню" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+          <a class="mlink" href="#about" onclick="closeMobileMenu()">Про нас</a>
+          <a class="mlink" href="#assortment" onclick="closeMobileMenu()">Асортимент</a>
+          <a class="mlink" href="#price" onclick="closeMobileMenu()">Ціни й бренди</a>
+          <a class="mlink" href="#order" onclick="closeMobileMenu()">Замовлення</a>
+          <a class="mlink" href="#gallery" onclick="closeMobileMenu()">Шоурум</a>
+          <a class="mlink" href="#contacts" onclick="closeMobileMenu()">Контакти</a>
+          <div class="nav-cta">
+            <button class="btn-header btn-header-outline" onclick="openModal('install'); closeMobileMenu()">
+              <span class="ico">🛠</span>Замовити поклейку
+            </button>
+            <button class="btn-header btn-header-solid" onclick="openModal(); closeMobileMenu()">
+              <span class="ico">☎</span>Замовити консультацію
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main id="top">
@@ -1257,25 +1376,19 @@
           <div class="swatch-fan">
             <div
               class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-blue.jpg&quot;);
-              "
+              style="background-image: url('images/swatches-blue.jpg')"
             ></div>
             <div
               class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-gold.jpg&quot;);
-              "
+              style="background-image: url('images/swatches-gold.jpg')"
             ></div>
             <div
               class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-green.jpg&quot;);
-              "
+              style="background-image: url('images/swatches-green.jpg')"
             ></div>
             <div
               class="swatch"
-              style="background-image: url(&quot;images/hero-blossom.jpg&quot;)"
+              style="background-image: url('images/hero-blossom.jpg')"
             ></div>
           </div>
         </div>
@@ -1420,29 +1533,14 @@
               рівні стики, акуратні кути, без переплат стороннім виконавцям.
               Виїзд, консультація на місці та монтаж — одним замовленням.
             </p>
-            <button
-              class="btn btn-primary"
-              onclick="openModal('Замовити поклейку')"
-            >
+            <button class="btn btn-primary" onclick="openModal('install')">
               Замовити поклейку
             </button>
           </div>
           <div class="install-photos reveal">
-            <img
-              src="images/montage/montazh-1.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
-            <img
-              src="images/montage/montazh-3.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
-            <img
-              src="images/montage/montazh-5.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
+            <img src="images/montage/montazh-1.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+            <img src="images/montage/montazh-3.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+            <img src="images/montage/montazh-5.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
           </div>
         </div>
       </section>
@@ -1665,16 +1763,9 @@
 
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal">
-        <h3>Як вам зручно зв'язатись?</h3>
-        <p>Оберіть спосіб — відповімо якнайшвидше.</p>
-        <div class="modal-options">
-          <a href="tel:__PHONE_RAW__">☎ Подзвонити — __PHONE_DISPLAY__</a>
-          <a href="__TELEGRAM__" target="_blank" rel="noopener"
-            >✈ Написати в Telegram</a
-          >
-          <a href="__VIBER__">💬 Написати у Viber</a>
-          <a href="mailto:__EMAIL__">✉ Написати на пошту</a>
-        </div>
+        <h3 id="modalTitle">Як вам зручно зв'язатись?</h3>
+        <p id="modalSubtitle">Оберіть спосіб — відповімо якнайшвидше.</p>
+        <div class="modal-options" id="modalOptions"></div>
         <button class="modal-close" onclick="closeModal()">Закрити</button>
       </div>
     </div>
@@ -1688,19 +1779,12 @@
         </div>
         <div class="lightbox-main">
           <img id="lightboxImg" src="" alt="" />
-          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">
-            ‹
-          </button>
-          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">
-            ›
-          </button>
+          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">‹</button>
+          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">›</button>
         </div>
         <div class="lightbox-thumbs" id="lightboxThumbs"></div>
         <div class="lightbox-cta">
-          <button
-            class="btn btn-primary"
-            onclick="openModal('Замовити поклейку')"
-          >
+          <button class="btn btn-primary" onclick="openModal('install')">
             Замовити поклейку цих шпалер
           </button>
         </div>
@@ -1725,7 +1809,7 @@
         // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
         document.head.innerHTML = document.head.innerHTML.replaceAll(
           "__DOMAIN__",
-          SITE.domain,
+          SITE.domain
         );
       }
       fill();
@@ -1781,11 +1865,54 @@
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // ---- модалка ----
-      function openModal(title) {
-        const heading = document.querySelector("#modalOverlay h3");
-        if (heading) {
-          heading.textContent = title || "Як вам зручно зв'язатись?";
-        }
+      // ---- мобільне меню ----
+      function toggleMobileMenu() {
+        document.getElementById("burgerBtn").classList.toggle("open");
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+      function closeMobileMenu() {
+        document.getElementById("burgerBtn").classList.remove("open");
+        document.getElementById("mobileMenu").classList.remove("open");
+      }
+
+      const CONTACT_SETS = {
+        consult: {
+          title: "Як вам зручно зв'язатись?",
+          subtitle: "Оберіть спосіб — відповімо якнайшвидше.",
+          options: [
+            { label: "☎ Подзвонити — " + SITE.phoneDisplay, href: "tel:" + SITE.phoneRaw },
+            { label: "✈ Написати в Telegram", href: SITE.telegramLink, blank: true },
+            { label: "💬 Написати у Viber", href: SITE.viberLink },
+            { label: "✉ Написати на пошту", href: "mailto:" + SITE.email },
+          ],
+        },
+        install: {
+          title: "Замовити поклейку шпалер",
+          subtitle: "Оберіть спосіб — узгодимо виїзд бригади майстрів.",
+          options: [
+            { label: "☎ Подзвонити — " + SITE.installPhoneDisplay, href: "tel:" + SITE.installPhoneRaw },
+            { label: "✈ Написати в Telegram", href: SITE.installTelegramLink, blank: true },
+            { label: "💬 Написати у Viber", href: SITE.installViberLink },
+          ],
+        },
+      };
+
+      function openModal(kind) {
+        const set = CONTACT_SETS[kind === "install" ? "install" : "consult"];
+        document.getElementById("modalTitle").textContent = set.title;
+        document.getElementById("modalSubtitle").textContent = set.subtitle;
+        const opts = document.getElementById("modalOptions");
+        opts.innerHTML = "";
+        set.options.forEach((o) => {
+          const a = document.createElement("a");
+          a.href = o.href;
+          a.textContent = o.label;
+          if (o.blank) {
+            a.target = "_blank";
+            a.rel = "noopener";
+          }
+          opts.appendChild(a);
+        });
         document.getElementById("modalOverlay").classList.add("open");
       }
       function closeModal() {
@@ -1803,6 +1930,10 @@
             "images/assortment/flizelinovi/flizelin-1.jpg",
             "images/assortment/flizelinovi/flizelin-2.jpg",
             "images/assortment/flizelinovi/flizelin-3.jpg",
+            "images/assortment/flizelinovi/flizelin-4.jpg",
+            "images/assortment/flizelinovi/flizelin-5.jpg",
+            "images/assortment/flizelinovi/flizelin-6.jpg",
+            "images/assortment/flizelinovi/flizelin-7.jpg",
           ],
         },
         vinilovi: {
@@ -1811,11 +1942,21 @@
             "images/assortment/vinilovi/vinil-1.jpg",
             "images/assortment/vinilovi/vinil-2.jpg",
             "images/assortment/vinilovi/vinil-3.jpg",
+            "images/assortment/vinilovi/vinil-4.jpg",
+            "images/assortment/vinilovi/vinil-5.jpg",
+            "images/assortment/vinilovi/vinil-6.jpg",
+            "images/assortment/vinilovi/vinil-7.jpg",
           ],
         },
         naturalni: {
           title: "Натуральні шпалери",
-          images: ["images/assortment/naturalni/natural-1.jpg"],
+          images: [
+            "images/assortment/naturalni/natural-1.jpg",
+            "images/assortment/naturalni/natural-2.jpg",
+            "images/assortment/naturalni/natural-3.jpg",
+            "images/assortment/naturalni/natural-4.jpg",
+            "images/assortment/naturalni/natural-5.jpg",
+          ],
         },
         panno: {
           title: "Панно, фотошпалери, 3D",
@@ -1827,7 +1968,6 @@
             "images/assortment/panno/panno-5.jpg",
             "images/assortment/panno/panno-6.jpg",
             "images/assortment/panno/panno-7.jpg",
-            "images/assortment/panno/panno-8.jpg",
           ],
         },
         farbuvannya: {
@@ -1836,6 +1976,8 @@
             "images/assortment/farbuvannya/farbuvannya-1.jpg",
             "images/assortment/farbuvannya/farbuvannya-2.jpg",
             "images/assortment/farbuvannya/farbuvannya-3.jpg",
+            "images/assortment/farbuvannya/farbuvannya-4.jpg",
+            "images/assortment/farbuvannya/farbuvannya-5.jpg",
           ],
         },
       };
@@ -1889,9 +2031,7 @@
         });
 
       document.addEventListener("keydown", (e) => {
-        if (
-          !document.getElementById("lightboxOverlay").classList.contains("open")
-        )
+        if (!document.getElementById("lightboxOverlay").classList.contains("open"))
           return;
         if (e.key === "Escape") closeGallery();
         if (e.key === "ArrowRight") galleryStep(1);
@@ -1900,7 +2040,7 @@
 
       // ---- анімації появи елементів при скролі ----
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
+        "(prefers-reduced-motion: reduce)"
       ).matches;
 
       if (!prefersReducedMotion && "IntersectionObserver" in window) {
@@ -1914,7 +2054,7 @@
               }
             });
           },
-          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
         );
         revealEls.forEach((el) => io.observe(el));
       } else {
@@ -1947,11 +2087,11 @@
               idleAngle += 0.006;
               fan.style.setProperty(
                 "--fan-ry",
-                `${Math.sin(idleAngle) * 4}deg`,
+                `${Math.sin(idleAngle) * 4}deg`
               );
               fan.style.setProperty(
                 "--fan-rx",
-                `${Math.cos(idleAngle * 0.8) * 2}deg`,
+                `${Math.cos(idleAngle * 0.8) * 2}deg`
               );
             }
             requestAnimationFrame(idleTilt);
