@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#16130f" />
     <meta name="geo.region" content="UA-46" />
     <meta name="geo.placename" content="Львів" />
-    <link rel="canonical" href="__DOMAIN__/" />
+    <link rel="canonical" href="https://proshpalery.com.ua/" />
     <link rel="icon" href="images/favicon.png" type="image/png" />
 
     <!-- Open Graph / Facebook -->
@@ -29,8 +29,11 @@
       property="og:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
     />
-    <meta property="og:url" content="__DOMAIN__/" />
-    <meta property="og:image" content="__DOMAIN__/images/og-image.jpg" />
+    <meta property="og:url" content="https://proshpalery.com.ua/" />
+    <meta
+      property="og:image"
+      content="https://proshpalery.com.ua/images/og-image.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -41,7 +44,10 @@
       name="twitter:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Доставка по Україні."
     />
-    <meta name="twitter:image" content="__DOMAIN__/images/og-image.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://proshpalery.com.ua/images/og-image.jpg"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1875,9 +1881,9 @@
           .replaceAll("__MAP_EMBED__", SITE.mapEmbedUrl)
           .replaceAll("__TOUR3D__", SITE.tour3dUrl);
 
-        // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
+        // https://proshpalery.com.ua підставляємо і в <head> (canonical, OG, Twitter)
         document.head.innerHTML = document.head.innerHTML.replaceAll(
-          "__DOMAIN__",
+          "https://proshpalery.com.ua",
           SITE.domain,
         );
       }
