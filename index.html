@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -24,10 +24,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="uk_UA" />
     <meta property="og:site_name" content="PRO Шпалери" />
-    <meta
-      property="og:title"
-      content="PRO Шпалери — шоурум шпалер у Львові"
-    />
+    <meta property="og:title" content="PRO Шпалери — шоурум шпалер у Львові" />
     <meta
       property="og:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Індивідуальний дизайн, власна бригада монтажу, доставка по Україні."
@@ -39,10 +36,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="PRO Шпалери — шоурум шпалер у Львові"
-    />
+    <meta name="twitter:title" content="PRO Шпалери — шоурум шпалер у Львові" />
     <meta
       name="twitter:description"
       content="Флізелінові, вінілові, натуральні шпалери, фотошпалери та 3D-панно. Доставка по Україні."
@@ -94,7 +88,8 @@
         .reveal {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+          transition:
+            opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.in-view {
@@ -104,7 +99,8 @@
         .reveal-stagger > * {
           opacity: 0;
           transform: translateY(26px);
-          transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transition:
+            opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal-stagger.in-view > * {
@@ -232,7 +228,9 @@
         border-radius: 2px;
         cursor: pointer;
         border: 2px solid transparent;
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
       }
       .btn:hover {
         transform: translateY(-2px);
@@ -318,7 +316,10 @@
         font-weight: 700;
         border-radius: 3px;
         white-space: nowrap;
-        transition: background 0.2s, transform 0.15s, border-color 0.2s;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          border-color 0.2s;
         cursor: pointer;
       }
       .btn-header:active {
@@ -364,7 +365,10 @@
         right: 8px;
         height: 2px;
         background: var(--ink);
-        transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+        transition:
+          transform 0.25s ease,
+          opacity 0.2s ease,
+          top 0.25s ease;
       }
       .burger span:nth-child(1) {
         top: 13px;
@@ -446,7 +450,8 @@
      ============================================================ */
       .hero {
         padding: 72px 0 40px;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             circle at 88% 8%,
             rgba(244, 196, 48, 0.35),
             transparent 45%
@@ -540,7 +545,9 @@
         background-size: cover;
         background-position: center;
         transform-origin: bottom center;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
       }
       .swatch:nth-child(1) {
         transform: translateX(-50%) rotate(-18deg) translateY(10px);
@@ -639,7 +646,9 @@
         flex-direction: column;
         justify-content: space-between;
         border-left: 3px solid transparent;
-        transition: background 0.25s ease, transform 0.25s ease,
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease,
           border-color 0.25s ease;
         cursor: pointer;
         overflow: hidden;
@@ -674,7 +683,9 @@
         background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
         opacity: 0;
         transform: translateY(6px);
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
       }
       .assort-card:hover .assort-cover::after {
         opacity: 1;
@@ -899,7 +910,9 @@
         cursor: pointer;
         opacity: 0.55;
         border: 2px solid transparent;
-        transition: opacity 0.2s, border-color 0.2s;
+        transition:
+          opacity 0.2s,
+          border-color 0.2s;
         flex-shrink: 0;
       }
       .lightbox-thumbs img.active {
@@ -1306,30 +1319,60 @@
           <li><a href="#contacts">Контакти</a></li>
         </ul>
         <div class="nav-cta">
-          <button class="btn-header btn-header-outline" onclick="openModal('install')">
+          <button
+            class="btn-header btn-header-outline"
+            onclick="openModal('install')"
+          >
             <span class="ico">🛠</span>Замовити поклейку
           </button>
           <button class="btn-header btn-header-solid" onclick="openModal()">
             <span class="ico">☎</span>Замовити консультацію
           </button>
         </div>
-        <button class="burger" id="burgerBtn" aria-label="Меню" onclick="toggleMobileMenu()">
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="Меню"
+          onclick="toggleMobileMenu()"
+        >
           <span></span><span></span><span></span>
         </button>
       </nav>
       <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
           <a class="mlink" href="#about" onclick="closeMobileMenu()">Про нас</a>
-          <a class="mlink" href="#assortment" onclick="closeMobileMenu()">Асортимент</a>
-          <a class="mlink" href="#price" onclick="closeMobileMenu()">Ціни й бренди</a>
-          <a class="mlink" href="#order" onclick="closeMobileMenu()">Замовлення</a>
-          <a class="mlink" href="#gallery" onclick="closeMobileMenu()">Шоурум</a>
-          <a class="mlink" href="#contacts" onclick="closeMobileMenu()">Контакти</a>
+          <a class="mlink" href="#assortment" onclick="closeMobileMenu()"
+            >Асортимент</a
+          >
+          <a class="mlink" href="#price" onclick="closeMobileMenu()"
+            >Ціни й бренди</a
+          >
+          <a class="mlink" href="#order" onclick="closeMobileMenu()"
+            >Замовлення</a
+          >
+          <a class="mlink" href="#gallery" onclick="closeMobileMenu()"
+            >Шоурум</a
+          >
+          <a class="mlink" href="#contacts" onclick="closeMobileMenu()"
+            >Контакти</a
+          >
           <div class="nav-cta">
-            <button class="btn-header btn-header-outline" onclick="openModal('install'); closeMobileMenu()">
+            <button
+              class="btn-header btn-header-outline"
+              onclick="
+                openModal('install');
+                closeMobileMenu();
+              "
+            >
               <span class="ico">🛠</span>Замовити поклейку
             </button>
-            <button class="btn-header btn-header-solid" onclick="openModal(); closeMobileMenu()">
+            <button
+              class="btn-header btn-header-solid"
+              onclick="
+                openModal();
+                closeMobileMenu();
+              "
+            >
               <span class="ico">☎</span>Замовити консультацію
             </button>
           </div>
@@ -1376,19 +1419,25 @@
           <div class="swatch-fan">
             <div
               class="swatch"
-              style="background-image: url('images/swatches-blue.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-blue.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/swatches-gold.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-gold.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/swatches-green.jpg')"
+              style="
+                background-image: url(&quot;images/swatches-green.jpg&quot;);
+              "
             ></div>
             <div
               class="swatch"
-              style="background-image: url('images/hero-blossom.jpg')"
+              style="background-image: url(&quot;images/hero-blossom.jpg&quot;)"
             ></div>
           </div>
         </div>
@@ -1538,9 +1587,21 @@
             </button>
           </div>
           <div class="install-photos reveal">
-            <img src="images/montage/montazh-1.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
-            <img src="images/montage/montazh-3.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
-            <img src="images/montage/montazh-5.jpg" alt="Монтаж шпалер майстрами" loading="lazy" />
+            <img
+              src="images/montage/montazh-1.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
+            <img
+              src="images/montage/montazh-3.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
+            <img
+              src="images/montage/montazh-5.jpg"
+              alt="Монтаж шпалер майстрами"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -1779,8 +1840,12 @@
         </div>
         <div class="lightbox-main">
           <img id="lightboxImg" src="" alt="" />
-          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">‹</button>
-          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">›</button>
+          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">
+            ‹
+          </button>
+          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">
+            ›
+          </button>
         </div>
         <div class="lightbox-thumbs" id="lightboxThumbs"></div>
         <div class="lightbox-cta">
@@ -1809,7 +1874,7 @@
         // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
         document.head.innerHTML = document.head.innerHTML.replaceAll(
           "__DOMAIN__",
-          SITE.domain
+          SITE.domain,
         );
       }
       fill();
@@ -1880,8 +1945,15 @@
           title: "Як вам зручно зв'язатись?",
           subtitle: "Оберіть спосіб — відповімо якнайшвидше.",
           options: [
-            { label: "☎ Подзвонити — " + SITE.phoneDisplay, href: "tel:" + SITE.phoneRaw },
-            { label: "✈ Написати в Telegram", href: SITE.telegramLink, blank: true },
+            {
+              label: "☎ Подзвонити — " + SITE.phoneDisplay,
+              href: "tel:" + SITE.phoneRaw,
+            },
+            {
+              label: "✈ Написати в Telegram",
+              href: SITE.telegramLink,
+              blank: true,
+            },
             { label: "💬 Написати у Viber", href: SITE.viberLink },
             { label: "✉ Написати на пошту", href: "mailto:" + SITE.email },
           ],
@@ -1890,8 +1962,15 @@
           title: "Замовити поклейку шпалер",
           subtitle: "Оберіть спосіб — узгодимо виїзд бригади майстрів.",
           options: [
-            { label: "☎ Подзвонити — " + SITE.installPhoneDisplay, href: "tel:" + SITE.installPhoneRaw },
-            { label: "✈ Написати в Telegram", href: SITE.installTelegramLink, blank: true },
+            {
+              label: "☎ Подзвонити — " + SITE.installPhoneDisplay,
+              href: "tel:" + SITE.installPhoneRaw,
+            },
+            {
+              label: "✈ Написати в Telegram",
+              href: SITE.installTelegramLink,
+              blank: true,
+            },
             { label: "💬 Написати у Viber", href: SITE.installViberLink },
           ],
         },
@@ -2031,7 +2110,9 @@
         });
 
       document.addEventListener("keydown", (e) => {
-        if (!document.getElementById("lightboxOverlay").classList.contains("open"))
+        if (
+          !document.getElementById("lightboxOverlay").classList.contains("open")
+        )
           return;
         if (e.key === "Escape") closeGallery();
         if (e.key === "ArrowRight") galleryStep(1);
@@ -2040,7 +2121,7 @@
 
       // ---- анімації появи елементів при скролі ----
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (!prefersReducedMotion && "IntersectionObserver" in window) {
@@ -2054,7 +2135,7 @@
               }
             });
           },
-          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
         );
         revealEls.forEach((el) => io.observe(el));
       } else {
@@ -2087,11 +2168,11 @@
               idleAngle += 0.006;
               fan.style.setProperty(
                 "--fan-ry",
-                `${Math.sin(idleAngle) * 4}deg`
+                `${Math.sin(idleAngle) * 4}deg`,
               );
               fan.style.setProperty(
                 "--fan-rx",
-                `${Math.cos(idleAngle * 0.8) * 2}deg`
+                `${Math.cos(idleAngle * 0.8) * 2}deg`,
               );
             }
             requestAnimationFrame(idleTilt);
