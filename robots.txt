@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://proshpalery.com.ua/sitemap.xml
