@@ -1,20 +1,6 @@
 <!doctype html>
 <html lang="uk">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-S1F9T1L8SM"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-S1F9T1L8SM");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -34,9 +20,8 @@
     <meta name="theme-color" content="#16130f" />
     <meta name="geo.region" content="UA-46" />
     <meta name="geo.placename" content="Львів" />
-    <link rel="canonical" href="https://proshpalery.com.ua/" />
+    <link rel="canonical" href="__DOMAIN__/" />
     <link rel="icon" href="images/favicon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="images/logo.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -47,17 +32,10 @@
       property="og:description"
       content="Флізелінові, вінілові, паперові, текстильні та шпоновані шпалери, безшовні панно й фотошпалери з 3D-друком. Підбір під ваш інтер'єр, професійний монтаж власною бригадою, доставка по Україні."
     />
-    <meta property="og:url" content="https://proshpalery.com.ua/" />
-    <meta
-      property="og:image"
-      content="https://proshpalery.com.ua/images/og-image.jpg"
-    />
+    <meta property="og:url" content="__DOMAIN__/" />
+    <meta property="og:image" content="__DOMAIN__/images/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="PRO Шпалери — шоурум шпалер у Львові"
-    />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -66,10 +44,7 @@
       name="twitter:description"
       content="Флізелінові, вінілові, паперові, текстильні та шпоновані шпалери, безшовні панно й фотошпалери з 3D-друком. Доставка по Україні."
     />
-    <meta
-      name="twitter:image"
-      content="https://proshpalery.com.ua/images/og-image.jpg"
-    />
+    <meta name="twitter:image" content="__DOMAIN__/images/og-image.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1236,7 +1211,7 @@
         display: none;
         align-items: center;
         justify-content: center;
-        z-index: 100;
+        z-index: 1100;
         padding: 20px;
       }
       .modal-overlay.open {
@@ -1303,7 +1278,7 @@
         // ⚠️ Заготовка: коли зʼявиться реальний домен, впишіть його сюди
         // (без завершального "/"), напр. "https://proshpalery.com.ua" —
         // це автоматично підставиться в canonical, Open Graph, JSON-LD.
-        domain: "https://proshpalery.com.ua",
+        domain: "https://proshpalery.com.ua/",
         brand: "PRO Шпалери",
         city: "Львів",
         phoneDisplay: "+380 97 585 94 52",
@@ -1849,7 +1824,7 @@
 
     <footer>
       <div class="wrap footer-row">
-        <div>© <span id="year"></span> PRO Шпалери — Львів</div>
+        <div>© <span id="year"></span> PRO Шпалери (Прошпалери) — Львів</div>
         <div>Сайт-візитка</div>
       </div>
     </footer>
@@ -1912,9 +1887,9 @@
           .replaceAll("__MAP_EMBED__", SITE.mapEmbedUrl)
           .replaceAll("__TOUR3D__", SITE.tour3dUrl);
 
-        // https://proshpalery.com.ua підставляємо і в <head> (canonical, OG, Twitter)
+        // __DOMAIN__ підставляємо і в <head> (canonical, OG, Twitter)
         document.head.innerHTML = document.head.innerHTML.replaceAll(
-          "https://proshpalery.com.ua",
+          "__DOMAIN__",
           SITE.domain,
         );
       }
@@ -1922,22 +1897,11 @@
 
       // ---- SEO: schema.org LocalBusiness (JSON-LD) ----
       function injectStructuredData() {
-        // schema.org очікує англійські назви днів тижня
-        const DAYS_EN = {
-          "Понеділок:": "Monday",
-          "Вівторок:": "Tuesday",
-          "Середа:": "Wednesday",
-          "Четвер:": "Thursday",
-          "П'ятниця:": "Friday",
-          "Субота:": "Saturday",
-          "Неділя:": "Sunday",
-        };
         const data = {
           "@context": "https://schema.org",
           "@type": "HomeAndConstructionBusiness",
           name: SITE.brand,
           image: `${SITE.domain}/images/og-image.jpg`,
-          logo: `${SITE.domain}/images/logo.png`,
           url: `${SITE.domain}/`,
           telephone: SITE.phoneRaw,
           email: SITE.email,
@@ -1958,7 +1922,7 @@
                 .map((s) => s.trim());
               return {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: DAYS_EN[day] || day.replace(":", ""),
+                dayOfWeek: day.replace(":", ""),
                 opens,
                 closes,
               };
