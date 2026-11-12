@@ -2,30 +2,25 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PRO Шпалери — шоурум шпалер у Львові</title>
     <meta
       name="description"
       content="PRO Шпалери — шоурум шпалер у Львові. Флізелінові, вінілові, натуральні та шпоновані шпалери, фотошпалери й 3D-панно. Монтаж власною бригадою, доставка по Україні."
     />
-    <meta
-      name="keywords"
-      content="шпалери львів, купити шпалери львів, флізелінові шпалери, вінілові шпалери, натуральні шпалери, шпоновані шпалери, текстильні шпалери, паперові шпалери, фотошпалери на замовлення, 3d панно, безшовні панно, шоурум шпалер львів, поклейка шпалер львів"
-    />
     <meta name="author" content="PRO Шпалери" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#16130f" />
-    <meta name="geo.region" content="UA-46" />
-    <meta name="geo.placename" content="Львів" />
     <link rel="canonical" href="https://proshpalery.com.ua/" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
-    <link
-      rel="preload"
-      as="image"
-      href="images/hero-blossom.webp"
-      type="image/webp"
-      fetchpriority="high"
-    />
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <!-- Шрифти: прелоад лише кириличних файлів, які потрібні для першого екрана -->
+    <link rel="preload" href="fonts/montserrat-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -38,8 +33,10 @@
     />
     <meta property="og:url" content="https://proshpalery.com.ua/" />
     <meta property="og:image" content="https://proshpalery.com.ua/images/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Шоурум PRO Шпалери у Львові — зразки та каталоги шпалер" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -49,15 +46,18 @@
       content="Флізелінові, вінілові, паперові, текстильні та шпоновані шпалери, безшовні панно й фотошпалери з 3D-друком. Доставка по Україні."
     />
     <meta name="twitter:image" content="https://proshpalery.com.ua/images/og-image.jpg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="twitter:image:alt" content="Шоурум PRO Шпалери у Львові — зразки та каталоги шпалер" />
 
     <style>
+      /* Шрифти самохостяться (папка fonts/): без запитів до Google, без render-blocking CSS.
+               Archivo Black і Fraunces не мають кирилиці — замінено на Montserrat 800 і Lora Italic. */
+      @font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url("fonts/manrope-cyrillic-wght-normal.woff2") format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+      @font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url("fonts/manrope-latin-wght-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+      @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 800; font-display: swap; src: url("fonts/montserrat-cyrillic-800-normal.woff2") format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+      @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 800; font-display: swap; src: url("fonts/montserrat-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+      @font-face { font-family: "Lora"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/lora-cyrillic-500-italic.woff2") format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+      @font-face { font-family: "Lora"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/lora-latin-500-italic.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
       /* ============================================================
      ДИЗАЙН-ТОКЕНИ — кольори й шрифти сайту
      ============================================================ */
@@ -74,9 +74,10 @@
         --true-black: #0a0a09; /* чистий чорний для секції асортименту */
         --true-black-elev: #17140f; /* трохи світліший чорний для карток */
 
-        --font-display: "Archivo Black", sans-serif;
-        --font-serif: "Fraunces", serif;
-        --font-body: "Manrope", sans-serif;
+        --font-display: "Montserrat", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+        --font-serif: "Lora", Georgia, "Times New Roman", serif;
+        --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        --gold-text: #7a5b12; /* темніший золотий для ТЕКСТУ (контраст ≥ 4.5:1) */
       }
 
       * {
@@ -85,51 +86,58 @@
         padding: 0;
       }
       html {
-        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        scroll-padding-top: 84px; /* щоб липка шапка не перекривала якорі */
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
       }
 
       /* ============================================================
      АНІМАЦІЇ: поява при скролі + hero-ефекти
      ============================================================ */
       @media (prefers-reduced-motion: no-preference) {
-        .reveal {
+        .js .reveal {
           opacity: 0;
           transform: translateY(30px);
           transition:
             opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .reveal.in-view {
+        .js .reveal.in-view {
           opacity: 1;
           transform: translateY(0);
         }
-        .reveal-stagger > * {
+        .js .reveal-stagger > * {
           opacity: 0;
           transform: translateY(26px);
           transition:
             opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .reveal-stagger.in-view > * {
+        .js .reveal-stagger.in-view > * {
           opacity: 1;
           transform: translateY(0);
         }
-        .reveal-stagger.in-view > *:nth-child(1) {
+        .js .reveal-stagger.in-view > *:nth-child(1) {
           transition-delay: 0.03s;
         }
-        .reveal-stagger.in-view > *:nth-child(2) {
+        .js .reveal-stagger.in-view > *:nth-child(2) {
           transition-delay: 0.1s;
         }
-        .reveal-stagger.in-view > *:nth-child(3) {
+        .js .reveal-stagger.in-view > *:nth-child(3) {
           transition-delay: 0.17s;
         }
-        .reveal-stagger.in-view > *:nth-child(4) {
+        .js .reveal-stagger.in-view > *:nth-child(4) {
           transition-delay: 0.24s;
         }
-        .reveal-stagger.in-view > *:nth-child(5) {
+        .js .reveal-stagger.in-view > *:nth-child(5) {
           transition-delay: 0.31s;
         }
-        .reveal-stagger.in-view > *:nth-child(6) {
+        .js .reveal-stagger.in-view > *:nth-child(6) {
           transition-delay: 0.38s;
         }
 
@@ -190,7 +198,7 @@
         font-style: italic;
         font-size: 15px;
         letter-spacing: 0.02em;
-        color: var(--gold-thread);
+        color: var(--gold-text);
         margin-bottom: 14px;
         display: flex;
         align-items: center;
@@ -206,6 +214,7 @@
       h2,
       h3 {
         font-family: var(--font-display);
+        font-weight: 800;
         text-transform: uppercase;
         line-height: 1.05;
         letter-spacing: -0.01em;
@@ -432,7 +441,7 @@
         font-size: 14px;
       }
 
-      @media (max-width: 1080px) {
+      @media (max-width: 1240px) {
         .nav-links {
           display: none;
         }
@@ -499,13 +508,15 @@
         }
       }
       .hero h1 {
-        font-size: clamp(38px, 6vw, 68px);
+        font-size: clamp(30px, 6vw, 68px);
         margin-bottom: 22px;
+        overflow-wrap: break-word;
       }
       .hero h1 em {
         font-style: normal;
         color: var(--paper);
-        -webkit-text-stroke: 1.5px var(--ink);
+        -webkit-text-stroke: 3px var(--ink);
+        paint-order: stroke fill; /* заливка перекриває внутрішні лінії контурів шрифту */
       }
       .hero-actions {
         display: flex;
@@ -549,8 +560,7 @@
         left: 50%;
         border: 6px solid var(--paper);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        background-size: cover;
-        background-position: center;
+        overflow: hidden;
         transform-origin: bottom center;
         transition:
           transform 0.35s ease,
@@ -715,11 +725,6 @@
       .assort-card:hover .assort-num {
         transform: translateX(4px);
       }
-      .assort-icon {
-        width: 40px;
-        height: 40px;
-        margin: 14px 0;
-      }
       .assort-card h3 {
         font-family: var(--font-body);
         font-weight: 800;
@@ -811,8 +816,10 @@
         object-fit: cover;
         border-radius: 2px;
       }
-      .install-photos img:first-child {
+      .install-photos picture:first-child {
         grid-column: 1 / -1;
+      }
+      .install-photos picture:first-child img {
         height: 150px;
       }
       @media (max-width: 860px) {
@@ -909,6 +916,14 @@
         overflow-x: auto;
         padding-bottom: 4px;
       }
+      .lightbox-thumbs button {
+        background: none;
+        border: 0;
+        padding: 0;
+        flex-shrink: 0;
+        cursor: pointer;
+        line-height: 0;
+      }
       .lightbox-thumbs img {
         width: 64px;
         height: 64px;
@@ -998,7 +1013,8 @@
         font-family: var(--font-display);
         font-size: 38px;
         color: var(--yellow);
-        -webkit-text-stroke: 1px var(--ink);
+        -webkit-text-stroke: 2px var(--ink);
+        paint-order: stroke fill;
       }
       .step h3 {
         font-family: var(--font-body);
@@ -1136,10 +1152,15 @@
         margin-top: 10px;
         border-collapse: collapse;
       }
+      .hours-table th,
       .hours-table td {
         padding: 6px 0;
         font-size: 14px;
         border-bottom: 1px dashed var(--line);
+      }
+      .hours-table th {
+        text-align: left;
+        font-weight: 400;
       }
       .hours-table td:last-child {
         text-align: right;
@@ -1260,7 +1281,8 @@
         background: var(--cream);
       }
       .modal-close {
-        margin-top: 20px;
+        margin-top: 12px;
+        padding: 10px 6px;
         background: none;
         border: none;
         font-size: 14px;
@@ -1268,87 +1290,310 @@
         cursor: pointer;
         opacity: 0.6;
       }
+    
+      /* ============================================================
+     ДОДАТКОВІ ПРАВКИ: доступність, надійність, адаптивність
+     ============================================================ */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .skip-link {
+        position: absolute;
+        left: 12px;
+        top: -64px;
+        z-index: 2000;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 12px 18px;
+        font-weight: 700;
+        border-radius: 3px;
+      }
+      .skip-link:focus {
+        top: 12px;
+      }
+      body.no-scroll {
+        overflow: hidden;
+      }
+      main:focus {
+        outline: none;
+      }
+
+      /* видимий фокус з клавіатури (раніше стилів фокусу не було зовсім) */
+      :focus-visible {
+        outline: 3px solid #1a73e8;
+        outline-offset: 3px;
+      }
+      #assortment :focus-visible,
+      .price-section :focus-visible,
+      .stripe :focus-visible,
+      footer :focus-visible,
+      .tour-card :focus-visible,
+      .lightbox-overlay :focus-visible {
+        outline-color: var(--yellow);
+      }
+      .install-cta :focus-visible {
+        outline-color: var(--ink);
+      }
+      button {
+        font-family: inherit;
+      }
+
+      /* шапка: десктопне меню більше не вилазить за екран на 1100–1350px */
+      @media (max-width: 1440px) {
+        .nav {
+          padding: 14px 24px;
+          gap: 16px;
+        }
+        .nav-links {
+          gap: clamp(14px, 1.7vw, 30px);
+          font-size: 13px;
+        }
+        .btn-header {
+          padding: 10px 14px;
+        }
+      }
+      /* закрите мобільне меню не має ловити фокус клавіатури */
+      .mobile-menu {
+        visibility: hidden;
+        transition:
+          max-height 0.3s ease,
+          visibility 0s linear 0.3s;
+      }
+      .mobile-menu.open {
+        visibility: visible;
+        transition-delay: 0s;
+        max-height: 520px;
+        max-height: min(560px, calc(100vh - 72px));
+        overflow-y: auto;
+      }
+      @media (max-width: 900px) {
+        .hero h1 {
+          font-size: clamp(30px, 9vw, 56px);
+        }
+        .hero h1 em {
+          -webkit-text-stroke-width: 2.4px;
+        }
+      }
+
+      /* hero-«віяло»: реальні <img> замість background-image */
+      .swatch picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .swatch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* картки асортименту: клавіатурно-доступна кнопка на всю картку */
+      .assort-card {
+        position: relative;
+      }
+      .assort-card:focus-within {
+        background: var(--cream);
+        transform: translateY(-6px);
+      }
+      #assortment .assort-card:focus-within {
+        background: #201b13;
+        border-left-color: var(--yellow);
+      }
+      .assort-card:focus-within .assort-cover img {
+        transform: scale(1.08);
+      }
+      .assort-card:focus-within .assort-cover::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .assort-open {
+        background: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+        letter-spacing: inherit;
+      }
+      .assort-open::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+      }
+      .assort-open:focus-visible {
+        outline: none;
+      }
+      .assort-open:focus-visible::after {
+        outline: 3px solid #1a73e8;
+        outline-offset: -3px;
+      }
+      #assortment .assort-open:focus-visible::after {
+        outline-color: var(--yellow);
+      }
+
+      /* галерея: класи g1/g2 тепер на <picture> — це і є елемент сітки */
+      .gallery-grid picture {
+        display: block;
+        min-height: 0;
+      }
+      .gallery-grid .g2 img {
+        object-position: center 62%;
+      }
+
+      /* лайтбокс/модалка: прокрутка на низьких екранах, стабільна висота кадру */
+      .lightbox-overlay {
+        align-items: flex-start;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+      }
+      .lightbox-box {
+        margin: auto;
+      }
+      .lightbox-main img {
+        height: 62vh;
+        max-height: 640px;
+        max-height: min(62dvh, 640px);
+      }
+      .modal-overlay {
+        align-items: flex-start;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+      }
+      .modal {
+        margin: auto;
+      }
+      .lightbox-nav,
+      .lightbox-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      address {
+        font-style: normal;
+      }
+      .footer-row a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* повага до налаштування «зменшити рух» */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
     </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "name": "PRO Шпалери",
-        "image": "https://proshpalery.com.ua/images/og-image.jpg",
-        "url": "https://proshpalery.com.ua/",
-        "telephone": "+380975859452",
-        "email": "proshpalery108@gmail.com",
-        "priceRange": "Індивідуально, за запитом",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "вул. Стрийська, 108",
-          "addressLocality": "Львів",
-          "postalCode": "79000",
-          "addressCountry": "UA"
-        },
-        "sameAs": [
-          "https://instagram.com/pro_shpalery",
-          "https://www.facebook.com/share/165cXiePtM/"
-        ],
-        "openingHoursSpecification": [
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Понеділок", "opens": "8:00", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Вівторок", "opens": "8:00", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Середа", "opens": "8:00", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Четвер", "opens": "8:00", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "П'ятниця", "opens": "8:00", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Субота", "opens": "10:00", "closes": "13:00" }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://proshpalery.com.ua/#website",
+            "url": "https://proshpalery.com.ua/",
+            "name": "PRO Шпалери",
+            "inLanguage": "uk"
+          },
+          {
+            "@type": [
+              "HomeGoodsStore",
+              "HomeAndConstructionBusiness"
+            ],
+            "@id": "https://proshpalery.com.ua/#business",
+            "name": "PRO Шпалери",
+            "description": "Шоурум шпалер у Львові: флізелінові, вінілові, натуральні та шпоновані шпалери, фотошпалери й 3D-панно. Монтаж власною бригадою, доставка по Україні.",
+            "url": "https://proshpalery.com.ua/",
+            "image": [
+              "https://proshpalery.com.ua/images/og-image.jpg",
+              "https://proshpalery.com.ua/images/storefront-1.jpg"
+            ],
+            "logo": "https://proshpalery.com.ua/images/logo.png",
+            "telephone": "+380975859452",
+            "email": "proshpalery108@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "вул. Стрийська, 108",
+              "addressLocality": "Львів",
+              "postalCode": "79000",
+              "addressCountry": "UA"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Львів"
+              },
+              {
+                "@type": "Country",
+                "name": "Україна"
+              }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/pro_shpalery/",
+              "https://www.facebook.com/share/165cXiePtM/"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+380975859452",
+                "availableLanguage": "uk"
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "installation orders",
+                "telephone": "+380674999333",
+                "availableLanguage": "uk"
+              }
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "08:00",
+                "closes": "16:30"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "13:00"
+              }
+            ]
+          }
         ]
       }
     </script>
-
   </head>
   <body>
-    <!-- ==================================================================
-     ⚙️  ПАНЕЛЬ ДАНИХ САЙТУ
-     Тут зібрані ВСІ тексти, номери, адреса, посилання, ціни.
-     Щоб змінити будь-що на сайті — редагуйте тільки тут,
-     дизайн і код нижче можна не чіпати.
-     ================================================================== -->
-    <script>
-      const SITE = {
-        // ⚠️ Заготовка: коли зʼявиться реальний домен, впишіть його сюди
-        // (без завершального "/"), напр. "https://proshpalery.com.ua" —
-        // це автоматично підставиться в canonical, Open Graph, JSON-LD.
-        domain: "https://proshpalery.com.ua/",
-        brand: "PRO Шпалери",
-        city: "Львів",
-        phoneDisplay: "+380 97 585 94 52",
-        phoneRaw: "+380975859452",
-        // окремий номер для замовлення поклейки (кнопка "Замовити поклейку")
-        installPhoneDisplay: "+380 67 499 93 33",
-        installPhoneRaw: "+380674999333",
-        installTelegramLink: "https://t.me/+380674999333",
-        installViberLink: "viber://chat?number=%2B380674999333",
-        email: "proshpalery108@gmail.com",
-        address: "вул. Стрийська, 108, Львів, 79000",
-        instagram: "https://instagram.com/pro_shpalery",
-        facebook: "https://www.facebook.com/share/165cXiePtM/",
-        telegramLink: "https://t.me/+380975859452",
-        viberLink: "viber://chat?number=%2B380975859452",
-        mapEmbedUrl:
-          "https://www.google.com/maps?q=PRO+%D0%A8%D0%BF%D0%B0%D0%BB%D0%B5%D1%80%D0%B8,+%D0%B2%D1%83%D0%BB.+%D0%A1%D1%82%D1%80%D0%B8%D0%B9%D1%81%D1%8C%D0%BA%D0%B0+108,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&output=embed",
-        tour3dUrl: "https://maps.app.goo.gl/Mcit1QZgmRCuZeEM7",
-        hours: [
-          ["Понеділок:", "8:00–16:30"],
-          ["Вівторок:", "8:00–16:30"],
-          ["Середа:", "8:00–16:30"],
-          ["Четвер:", "8:00–16:30"],
-          ["П'ятниця:", "8:00–16:30"],
-          ["Субота:", "10:00–13:00"],
-          ["Неділя:", "Вихідний"],
-        ],
-        priceFrom: "Індивідуально, за запитом",
-      };
-    </script>
+    <a class="skip-link" href="#top">Перейти до змісту</a>
 
     <header>
-      <nav class="nav">
-        <a class="logo" href="#top"><span>PRO</span>ШПАЛЕРИ</a>
+      <nav class="nav" aria-label="Основна навігація">
+        <a class="logo" href="#top" aria-label="PRO Шпалери — на початок"><span>PRO</span>ШПАЛЕРИ</a>
         <ul class="nav-links">
           <li><a href="#about">Про нас</a></li>
           <li><a href="#assortment">Асортимент</a></li>
@@ -1358,68 +1603,45 @@
           <li><a href="#contacts">Контакти</a></li>
         </ul>
         <div class="nav-cta">
-          <button
-            class="btn-header btn-header-outline"
-            onclick="openModal('install')"
-          >
-            <span class="ico">🛠</span>Замовити поклейку
+          <button type="button" class="btn-header btn-header-outline" data-open-modal="install">
+            <span class="ico" aria-hidden="true">🛠</span>Замовити поклейку
           </button>
-          <button class="btn-header btn-header-solid" onclick="openModal()">
-            <span class="ico">☎</span>Замовити консультацію
+          <button type="button" class="btn-header btn-header-solid" data-open-modal="consult">
+            <span class="ico" aria-hidden="true">☎</span>Замовити консультацію
           </button>
         </div>
         <button
+          type="button"
           class="burger"
           id="burgerBtn"
           aria-label="Меню"
-          onclick="toggleMobileMenu()"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
         >
           <span></span><span></span><span></span>
         </button>
       </nav>
-      <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Мобільне меню">
         <div class="mobile-menu-inner">
-          <a class="mlink" href="#about" onclick="closeMobileMenu()">Про нас</a>
-          <a class="mlink" href="#assortment" onclick="closeMobileMenu()"
-            >Асортимент</a
-          >
-          <a class="mlink" href="#price" onclick="closeMobileMenu()"
-            >Ціни й бренди</a
-          >
-          <a class="mlink" href="#order" onclick="closeMobileMenu()"
-            >Замовлення</a
-          >
-          <a class="mlink" href="#gallery" onclick="closeMobileMenu()"
-            >Шоурум</a
-          >
-          <a class="mlink" href="#contacts" onclick="closeMobileMenu()"
-            >Контакти</a
-          >
+          <a class="mlink" href="#about">Про нас</a>
+          <a class="mlink" href="#assortment">Асортимент</a>
+          <a class="mlink" href="#price">Ціни й бренди</a>
+          <a class="mlink" href="#order">Замовлення</a>
+          <a class="mlink" href="#gallery">Шоурум</a>
+          <a class="mlink" href="#contacts">Контакти</a>
           <div class="nav-cta">
-            <button
-              class="btn-header btn-header-outline"
-              onclick="
-                openModal('install');
-                closeMobileMenu();
-              "
-            >
-              <span class="ico">🛠</span>Замовити поклейку
+            <button type="button" class="btn-header btn-header-outline" data-open-modal="install">
+              <span class="ico" aria-hidden="true">🛠</span>Замовити поклейку
             </button>
-            <button
-              class="btn-header btn-header-solid"
-              onclick="
-                openModal();
-                closeMobileMenu();
-              "
-            >
-              <span class="ico">☎</span>Замовити консультацію
+            <button type="button" class="btn-header btn-header-solid" data-open-modal="consult">
+              <span class="ico" aria-hidden="true">☎</span>Замовити консультацію
             </button>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <!-- ================= HERO ================= -->
       <section class="hero">
         <div class="wrap hero-grid">
@@ -1436,12 +1658,10 @@
               бригади майстрів.
             </p>
             <div class="hero-actions">
-              <button class="btn btn-primary" onclick="openModal()">
+              <button type="button" class="btn btn-primary" data-open-modal="consult">
                 Замовити консультацію
               </button>
-              <a class="btn btn-outline" href="#assortment"
-                >Дивитись асортимент</a
-              >
+              <a class="btn btn-outline" href="#assortment">Дивитись асортимент</a>
             </div>
             <div class="hero-stats">
               <div class="hero-stat"><b>10+</b><span>років на ринку</span></div>
@@ -1456,29 +1676,35 @@
               </div>
             </div>
           </div>
-          <div class="swatch-fan">
-            <div
-              class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-blue.jpg&quot;); background-image: -webkit-image-set(url(&quot;images/swatches-blue.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-blue.jpg&quot;) type(&quot;image/jpeg&quot;) 1x); background-image: image-set(url(&quot;images/swatches-blue.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-blue.jpg&quot;) type(&quot;image/jpeg&quot;) 1x);
-              "
-            ></div>
-            <div
-              class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-gold.jpg&quot;); background-image: -webkit-image-set(url(&quot;images/swatches-gold.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-gold.jpg&quot;) type(&quot;image/jpeg&quot;) 1x); background-image: image-set(url(&quot;images/swatches-gold.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-gold.jpg&quot;) type(&quot;image/jpeg&quot;) 1x);
-              "
-            ></div>
-            <div
-              class="swatch"
-              style="
-                background-image: url(&quot;images/swatches-green.jpg&quot;); background-image: -webkit-image-set(url(&quot;images/swatches-green.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-green.jpg&quot;) type(&quot;image/jpeg&quot;) 1x); background-image: image-set(url(&quot;images/swatches-green.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/swatches-green.jpg&quot;) type(&quot;image/jpeg&quot;) 1x);
-              "
-            ></div>
-            <div
-              class="swatch"
-              style="background-image: url(&quot;images/hero-blossom.jpg&quot;); background-image: -webkit-image-set(url(&quot;images/hero-blossom.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/hero-blossom.jpg&quot;) type(&quot;image/jpeg&quot;) 1x); background-image: image-set(url(&quot;images/hero-blossom.webp&quot;) type(&quot;image/webp&quot;) 1x, url(&quot;images/hero-blossom.jpg&quot;) type(&quot;image/jpeg&quot;) 1x)"
-            ></div>
+          <div class="swatch-fan" aria-hidden="true">
+            <div class="swatch">
+              <picture>
+                <source srcset="images/sm/swatch-blue.avif" type="image/avif" />
+                <source srcset="images/sm/swatch-blue.webp" type="image/webp" />
+                <img src="images/sm/swatch-blue.jpg" width="300" height="664" alt="" loading="eager" decoding="async" />
+              </picture>
+            </div>
+            <div class="swatch">
+              <picture>
+                <source srcset="images/sm/swatch-gold.avif" type="image/avif" />
+                <source srcset="images/sm/swatch-gold.webp" type="image/webp" />
+                <img src="images/sm/swatch-gold.jpg" width="300" height="664" alt="" loading="eager" decoding="async" />
+              </picture>
+            </div>
+            <div class="swatch">
+              <picture>
+                <source srcset="images/sm/swatch-green.avif" type="image/avif" />
+                <source srcset="images/sm/swatch-green.webp" type="image/webp" />
+                <img src="images/sm/swatch-green.jpg" width="300" height="664" alt="" loading="eager" decoding="async" />
+              </picture>
+            </div>
+            <div class="swatch">
+              <picture>
+                <source srcset="images/sm/swatch-blossom.avif" type="image/avif" />
+                <source srcset="images/sm/swatch-blossom.webp" type="image/webp" />
+                <img src="images/sm/swatch-blossom.jpg" width="300" height="664" alt="" loading="eager" fetchpriority="high" decoding="async" />
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -1486,26 +1712,18 @@
       <!-- ================= СМУГА ================= -->
       <div class="stripe">
         <div class="wrap">
-          <div class="stripe-item">
-            <span class="dot"></span>Індивідуальний дизайн + фотошпалери
-          </div>
-          <div class="stripe-item">
-            <span class="dot"></span>Доставка по Україні
-          </div>
-          <div class="stripe-item">
-            <span class="dot"></span>Шоурум з паркінгом
-          </div>
-          <div class="stripe-item">
-            <span class="dot"></span>Європейські та американські бренди
-          </div>
+          <div class="stripe-item"><span class="dot"></span>Індивідуальний дизайн + фотошпалери</div>
+          <div class="stripe-item"><span class="dot"></span>Доставка по Україні</div>
+          <div class="stripe-item"><span class="dot"></span>Шоурум з паркінгом</div>
+          <div class="stripe-item"><span class="dot"></span>Європейські та американські бренди</div>
         </div>
       </div>
 
       <!-- ================= ПРО НАС ================= -->
-      <section id="about">
+      <section id="about" aria-labelledby="about-title">
         <div class="wrap">
           <div class="eyebrow">Про нас</div>
-          <h2 class="reveal" style="max-width: 760px">
+          <h2 class="reveal" id="about-title" style="max-width: 760px">
             Шоурум, де можна побачити, доторкнутись і уявити свою кімнату
           </h2>
           <p class="lead reveal">
@@ -1518,107 +1736,102 @@
       </section>
 
       <!-- ================= АСОРТИМЕНТ ================= -->
-      <section id="assortment">
+      <section id="assortment" aria-labelledby="assortment-title">
         <div class="wrap">
           <div class="eyebrow reveal">У нас ви знайдете</div>
-          <h2 class="reveal">Різні типи шпалер</h2>
+          <h2 class="reveal" id="assortment-title">Різні типи шпалер</h2>
           <p class="lead reveal">
             П'ять напрямів, серед яких завжди знайдеться рішення під ваш простір
             і бюджет.
           </p>
 
           <div class="assort-grid reveal-stagger">
-            <div class="assort-card" onclick="openGallery('flizelinovi')">
+            <div class="assort-card">
               <div class="assort-cover">
                 <picture>
-                  <source srcset="images/assortment/flizelinovi/flizelin-1.webp" type="image/webp" />
-                <img
-                  src="images/assortment/flizelinovi/flizelin-1.jpg"
-                  alt="Флізелінові шпалери — приклад"
-                  loading="lazy"
-                />
+                  <source srcset="images/sm/cover-flizelinovi.avif" type="image/avif" />
+                  <source srcset="images/sm/cover-flizelinovi.webp" type="image/webp" />
+                  <img src="images/sm/cover-flizelinovi.jpg" width="640" height="427" alt="Флізелінові шпалери з графічним малюнком на стіні — приклад із шоуруму PRO Шпалери" loading="lazy" decoding="async" />
                 </picture>
               </div>
               <div class="assort-body">
-                <div class="assort-num">01</div>
+                <div class="assort-num" aria-hidden="true">01</div>
                 <div>
-                  <h3>Флізелінові</h3>
+                  <h3>
+                    <button type="button" class="assort-open" data-open-gallery="flizelinovi" aria-haspopup="dialog">Флізелінові<span class="sr-only"> — переглянути фото</span></button>
+                  </h3>
                   <p>Щільні, стабільні, легко клеяться</p>
                 </div>
               </div>
             </div>
-            <div class="assort-card" onclick="openGallery('vinilovi')">
+            <div class="assort-card">
               <div class="assort-cover">
                 <picture>
-                  <source srcset="images/assortment/vinilovi/vinil-1.webp" type="image/webp" />
-                <img
-                  src="images/assortment/vinilovi/vinil-1.jpg"
-                  alt="Вінілові шпалери — приклад"
-                  loading="lazy"
-                />
+                  <source srcset="images/sm/cover-vinilovi.avif" type="image/avif" />
+                  <source srcset="images/sm/cover-vinilovi.webp" type="image/webp" />
+                  <img src="images/sm/cover-vinilovi.jpg" width="640" height="427" alt="Вінілові шпалери насиченого коричневого кольору в інтер'єрі" loading="lazy" decoding="async" />
                 </picture>
               </div>
               <div class="assort-body">
-                <div class="assort-num">02</div>
+                <div class="assort-num" aria-hidden="true">02</div>
                 <div>
-                  <h3>Вінілові</h3>
+                  <h3>
+                    <button type="button" class="assort-open" data-open-gallery="vinilovi" aria-haspopup="dialog">Вінілові<span class="sr-only"> — переглянути фото</span></button>
+                  </h3>
                   <p>Стійкі до вологи та миття</p>
                 </div>
               </div>
             </div>
-            <div class="assort-card" onclick="openGallery('naturalni')">
+            <div class="assort-card">
               <div class="assort-cover">
                 <picture>
-                  <source srcset="images/assortment/naturalni/natural-5.webp" type="image/webp" />
-                <img
-                  src="images/assortment/naturalni/natural-5.jpg"
-                  alt="Натуральні шпалери — приклад"
-                  loading="lazy"
-                />
+                  <source srcset="images/sm/cover-naturalni.avif" type="image/avif" />
+                  <source srcset="images/sm/cover-naturalni.webp" type="image/webp" />
+                  <img src="images/sm/cover-naturalni.jpg" width="640" height="427" alt="Натуральні шпоновані шпалери — стіна з деревним візерунком" loading="lazy" decoding="async" />
                 </picture>
               </div>
               <div class="assort-body">
-                <div class="assort-num">03</div>
+                <div class="assort-num" aria-hidden="true">03</div>
                 <div>
-                  <h3>Натуральні</h3>
+                  <h3>
+                    <button type="button" class="assort-open" data-open-gallery="naturalni" aria-haspopup="dialog">Натуральні<span class="sr-only"> — переглянути фото</span></button>
+                  </h3>
                   <p>Текстиль, шпон, флок, солома</p>
                 </div>
               </div>
             </div>
-            <div class="assort-card" onclick="openGallery('panno')">
+            <div class="assort-card">
               <div class="assort-cover">
                 <picture>
-                  <source srcset="images/assortment/panno/panno-2.webp" type="image/webp" />
-                <img
-                  src="images/assortment/panno/panno-2.jpg"
-                  alt="Панно, фотошпалери, 3D — приклад"
-                  loading="lazy"
-                />
+                  <source srcset="images/sm/cover-panno.avif" type="image/avif" />
+                  <source srcset="images/sm/cover-panno.webp" type="image/webp" />
+                  <img src="images/sm/cover-panno.jpg" width="640" height="427" alt="Панно з квітковим візерунком на стіні кімнати з паркетом" loading="lazy" decoding="async" />
                 </picture>
               </div>
               <div class="assort-body">
-                <div class="assort-num">04</div>
+                <div class="assort-num" aria-hidden="true">04</div>
                 <div>
-                  <h3>Панно, фотошпалери, 3D</h3>
+                  <h3>
+                    <button type="button" class="assort-open" data-open-gallery="panno" aria-haspopup="dialog">Панно, фотошпалери, 3D<span class="sr-only"> — переглянути фото</span></button>
+                  </h3>
                   <p>Індивідуальні розміри й сюжети</p>
                 </div>
               </div>
             </div>
-            <div class="assort-card" onclick="openGallery('farbuvannya')">
+            <div class="assort-card">
               <div class="assort-cover">
                 <picture>
-                  <source srcset="images/assortment/farbuvannya/farbuvannya-1.webp" type="image/webp" />
-                <img
-                  src="images/assortment/farbuvannya/farbuvannya-1.jpg"
-                  alt="Шпалери під фарбування — приклад"
-                  loading="lazy"
-                />
+                  <source srcset="images/sm/cover-farbuvannya.avif" type="image/avif" />
+                  <source srcset="images/sm/cover-farbuvannya.webp" type="image/webp" />
+                  <img src="images/sm/cover-farbuvannya.jpg" width="640" height="427" alt="Шпалери під фарбування — нанесення фарби валиком на рельєфну поверхню" loading="lazy" decoding="async" />
                 </picture>
               </div>
               <div class="assort-body">
-                <div class="assort-num">05</div>
+                <div class="assort-num" aria-hidden="true">05</div>
                 <div>
-                  <h3>Під фарбування</h3>
+                  <h3>
+                    <button type="button" class="assort-open" data-open-gallery="farbuvannya" aria-haspopup="dialog">Під фарбування<span class="sr-only"> — переглянути фото</span></button>
+                  </h3>
                   <p>Змінюйте колір, коли захочете</p>
                 </div>
               </div>
@@ -1628,10 +1841,10 @@
       </section>
 
       <!-- ================= ЗАМОВИТИ ПОКЛЕЙКУ ================= -->
-      <section class="install-cta">
+      <section class="install-cta" aria-labelledby="install-title">
         <div class="wrap">
           <div class="reveal">
-            <h2>Клеїмо самі — власна бригада майстрів</h2>
+            <h2 id="install-title">Клеїмо самі — власна бригада майстрів</h2>
             <p>
               Ми не просто продаємо шпалери, а забезпечуємо повний комплекс
               робіт силами власної професійної бригади. Гарантуємо ідеальні
@@ -1639,44 +1852,35 @@
               Консультація, точні заміри, підбір матеріалів та професійний
               монтаж — усе в одному замовленні.
             </p>
-            <button class="btn btn-primary" onclick="openModal('install')">
+            <button type="button" class="btn btn-primary" data-open-modal="install">
               Замовити поклейку
             </button>
           </div>
           <div class="install-photos reveal">
             <picture>
-              <source srcset="images/montage/montazh-1.webp" type="image/webp" />
-            <img
-              src="images/montage/montazh-1.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
+              <source srcset="images/sm/install-1.avif" type="image/avif" />
+              <source srcset="images/sm/install-1.webp" type="image/webp" />
+              <img src="images/sm/install-1.jpg" width="800" height="400" alt="Двоє майстрів клеять шпалери з геометричним візерунком під скошеною стелею" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/montage/montazh-3.webp" type="image/webp" />
-            <img
-              src="images/montage/montazh-3.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
+              <source srcset="images/sm/install-2.avif" type="image/avif" />
+              <source srcset="images/sm/install-2.webp" type="image/webp" />
+              <img src="images/sm/install-2.jpg" width="800" height="400" alt="Майстер клеїть шпалери з рослинним візерунком" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/montage/montazh-5.webp" type="image/webp" />
-            <img
-              src="images/montage/montazh-5.jpg"
-              alt="Монтаж шпалер майстрами"
-              loading="lazy"
-            />
+              <source srcset="images/sm/install-3.avif" type="image/avif" />
+              <source srcset="images/sm/install-3.webp" type="image/webp" />
+              <img src="images/sm/install-3.jpg" width="800" height="400" alt="Майстри монтують шпоновані панелі біля мансардного вікна" loading="lazy" decoding="async" />
             </picture>
           </div>
         </div>
       </section>
 
       <!-- ================= ЦІНИ Й БРЕНДИ ================= -->
-      <section id="price" class="price-section">
+      <section id="price" class="price-section" aria-labelledby="price-title">
         <div class="wrap">
           <div class="eyebrow reveal">Прайс і бренди</div>
-          <h2 class="reveal" style="color: var(--paper)">
+          <h2 class="reveal" id="price-title" style="color: var(--paper)">
             Чесна ціна.<br />Перевірені виробники.
           </h2>
           <div class="price-grid reveal-stagger">
@@ -1701,16 +1905,16 @@
       </section>
 
       <!-- ================= ЯК ЗАМОВИТИ ================= -->
-      <section id="order">
+      <section id="order" aria-labelledby="order-title">
         <div class="wrap">
           <div class="eyebrow reveal">Як відбувається замовлення</div>
-          <h2 class="reveal" style="max-width: 760px">
+          <h2 class="reveal" id="order-title" style="max-width: 760px">
             Чотири кроки до вашого ідеального інтер'єру
           </h2>
 
           <div class="steps reveal-stagger">
             <div class="step">
-              <div class="step-num">01</div>
+              <div class="step-num" aria-hidden="true">01</div>
               <div>
                 <h3>Ознайомлення з асортиментом</h3>
                 <p>
@@ -1721,7 +1925,7 @@
               </div>
             </div>
             <div class="step">
-              <div class="step-num">02</div>
+              <div class="step-num" aria-hidden="true">02</div>
               <div>
                 <h3>Підбір і розрахунок</h3>
                 <p>
@@ -1732,7 +1936,7 @@
               </div>
             </div>
             <div class="step">
-              <div class="step-num">03</div>
+              <div class="step-num" aria-hidden="true">03</div>
               <div>
                 <h3>Замовлення та доставка</h3>
                 <p>
@@ -1742,7 +1946,7 @@
               </div>
             </div>
             <div class="step">
-              <div class="step-num">04</div>
+              <div class="step-num" aria-hidden="true">04</div>
               <div>
                 <h3>Професійний монтаж</h3>
                 <p>
@@ -1757,77 +1961,51 @@
       </section>
 
       <!-- ================= ГАЛЕРЕЯ ================= -->
-      <section id="gallery" style="background: var(--cream)">
+      <section id="gallery" aria-labelledby="gallery-title" style="background: var(--cream)">
         <div class="wrap">
           <div class="eyebrow reveal">Шоурум</div>
-          <h2 class="reveal">Ласкаво просимо в світ PRO Шпалери</h2>
+          <h2 class="reveal" id="gallery-title">Ласкаво просимо в світ PRO Шпалери</h2>
 
           <div class="gallery-grid reveal-stagger">
-            <picture>
-              <source srcset="images/gallery-couch.webp" type="image/webp" />
-            <img
-              class="g1"
-              src="images/gallery-couch.jpg"
-              alt="Інтер'єр шоуруму PRO Шпалери"
-              loading="lazy"
-            />
+            <picture class="g1">
+              <source srcset="images/sm/gallery-couch.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-couch.webp" type="image/webp" />
+              <img src="images/sm/gallery-couch.jpg" width="1100" height="728" alt="Інтер'єр шоуруму PRO Шпалери: стенд зі зразками на стіні" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/gallery-molding.webp" type="image/webp" />
-            <img
-              src="images/gallery-molding.jpg"
-              alt="Стенд зі зразками молдингів та шпалер"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-molding.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-molding.webp" type="image/webp" />
+              <img src="images/sm/gallery-molding.jpg" width="700" height="463" alt="Стенд зі зразками молдингів та шпалер" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/book-open.webp" type="image/webp" />
-            <img
-              src="images/book-open.jpg"
-              alt="Каталог шпалер"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-book.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-book.webp" type="image/webp" />
+              <img src="images/sm/gallery-book.jpg" width="700" height="464" alt="Відкритий каталог шпалер із зразками" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/showroom/catalogs-flatlay.webp" type="image/webp" />
-            <img
-              src="images/showroom/catalogs-flatlay.jpg"
-              alt="Каталоги шпалер на столі шоуруму"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-catalogs.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-catalogs.webp" type="image/webp" />
+              <img src="images/sm/gallery-catalogs.jpg" width="700" height="464" alt="Каталоги шпалер на столі шоуруму" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/showroom/shelves.webp" type="image/webp" />
-            <img
-              src="images/showroom/shelves.jpg"
-              alt="Стелажі з каталогами шпалер у шоурумі"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-shelves.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-shelves.webp" type="image/webp" />
+              <img src="images/sm/gallery-shelves.jpg" width="700" height="463" alt="Стелажі з каталогами шпалер у шоурумі" loading="lazy" decoding="async" />
+            </picture>
+            <picture class="g2">
+              <source srcset="images/sm/gallery-storefront.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-storefront.webp" type="image/webp" />
+              <img src="images/sm/gallery-storefront.jpg" width="1100" height="729" alt="Фасад шоуруму PRO Шпалери у Львові, вул. Стрийська" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/storefront-1.webp" type="image/webp" />
-            <img
-              class="g2"
-              src="images/storefront-1.jpg"
-              alt="Фасад шоуруму PRO Шпалери у Львові"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-gold.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-gold.webp" type="image/webp" />
+              <img src="images/sm/gallery-gold.jpg" width="700" height="464" alt="Зразки шпалер, золота колекція" loading="lazy" decoding="async" />
             </picture>
             <picture>
-              <source srcset="images/swatches-gold.webp" type="image/webp" />
-            <img
-              src="images/swatches-gold.jpg"
-              alt="Зразки шпалер, золота колекція"
-              loading="lazy"
-            />
-            </picture>
-            <picture>
-              <source srcset="images/swatches-green.webp" type="image/webp" />
-            <img
-              src="images/swatches-green.jpg"
-              alt="Зразки шпалер, зелена колекція"
-              loading="lazy"
-            />
+              <source srcset="images/sm/gallery-green.avif" type="image/avif" />
+              <source srcset="images/sm/gallery-green.webp" type="image/webp" />
+              <img src="images/sm/gallery-green.jpg" width="700" height="464" alt="Зразки шпалер, зелена колекція" loading="lazy" decoding="async" />
             </picture>
           </div>
 
@@ -1843,72 +2021,76 @@
               class="btn btn-light"
               href="https://maps.app.goo.gl/Mcit1QZgmRCuZeEM7"
               target="_blank"
-              rel="noopener"
-              >Відкрити 3D-тур</a
+              rel="noopener noreferrer"
+              >Відкрити 3D-тур<span class="sr-only"> (відкриється в новій вкладці)</span></a
             >
           </div>
         </div>
       </section>
 
       <!-- ================= КОНТАКТИ ================= -->
-      <section id="contacts">
+      <section id="contacts" aria-labelledby="contacts-title">
         <div class="wrap">
           <div class="eyebrow reveal">Контакти</div>
-          <h2 class="reveal">Завітайте в гості<br />або напишіть нам</h2>
+          <h2 class="reveal" id="contacts-title">Завітайте в гості<br />або напишіть нам</h2>
 
           <div class="contact-grid reveal">
             <div>
               <div class="contact-list">
                 <div class="contact-item">
-                  <div class="ic">☎</div>
+                  <div class="ic" aria-hidden="true">☎</div>
                   <div>
                     <b>Телефон / Telegram / Viber</b
                     ><a href="tel:+380975859452">+380 97 585 94 52</a>
                   </div>
                 </div>
                 <div class="contact-item">
-                  <div class="ic">✉</div>
+                  <div class="ic" aria-hidden="true">✉</div>
                   <div>
                     <b>Email</b><a href="mailto:proshpalery108@gmail.com">proshpalery108@gmail.com</a>
                   </div>
                 </div>
                 <div class="contact-item">
-                  <div class="ic">📍</div>
+                  <div class="ic" aria-hidden="true">📍</div>
                   <div><b>Адреса</b><span>вул. Стрийська, 108, Львів, 79000</span></div>
                 </div>
               </div>
 
-              <table class="hours-table" id="hoursTable"></table>
+              <table class="hours-table">
+                <caption class="sr-only">Графік роботи шоуруму</caption>
+                <tbody>
+          <tr><th scope="row">Понеділок:</th><td>8:00–16:30</td></tr>
+          <tr><th scope="row">Вівторок:</th><td>8:00–16:30</td></tr>
+          <tr><th scope="row">Середа:</th><td>8:00–16:30</td></tr>
+          <tr><th scope="row">Четвер:</th><td>8:00–16:30</td></tr>
+          <tr><th scope="row">П'ятниця:</th><td>8:00–16:30</td></tr>
+          <tr><th scope="row">Субота:</th><td>10:00–13:00</td></tr>
+          <tr><th scope="row">Неділя:</th><td>Вихідний</td></tr>
+                </tbody>
+              </table>
 
               <div class="social-row">
-                <a
-                  href="https://instagram.com/pro_shpalery"
-                  target="_blank"
-                  rel="noopener"
-                  title="Instagram"
-                  >IG</a
+                <a href="https://www.instagram.com/pro_shpalery/" target="_blank" rel="noopener noreferrer" title="Instagram"
+                  ><span aria-hidden="true">IG</span><span class="sr-only">Instagram (нова вкладка)</span></a
                 >
-                <a
-                  href="https://www.facebook.com/share/165cXiePtM/"
-                  target="_blank"
-                  rel="noopener"
-                  title="Facebook"
-                  >FB</a
+                <a href="https://www.facebook.com/share/165cXiePtM/" target="_blank" rel="noopener noreferrer" title="Facebook"
+                  ><span aria-hidden="true">FB</span><span class="sr-only">Facebook (нова вкладка)</span></a
                 >
-                <a
-                  href="https://t.me/+380975859452"
-                  target="_blank"
-                  rel="noopener"
-                  title="Telegram"
-                  >TG</a
+                <a href="https://t.me/+380975859452" target="_blank" rel="noopener noreferrer" title="Telegram"
+                  ><span aria-hidden="true">TG</span><span class="sr-only">Telegram (нова вкладка)</span></a
                 >
-                <a href="viber://chat?number=%2B380975859452" title="Viber">VB</a>
+                <a href="viber://chat?number=%2B380975859452" title="Viber"
+                  ><span aria-hidden="true">VB</span><span class="sr-only">Viber</span></a
+                >
               </div>
             </div>
 
             <iframe
               class="map-frame"
+              title="Карта: шоурум PRO Шпалери, вул. Стрийська, 108, Львів"
               src="https://www.google.com/maps?q=PRO+%D0%A8%D0%BF%D0%B0%D0%BB%D0%B5%D1%80%D0%B8,+%D0%B2%D1%83%D0%BB.+%D0%A1%D1%82%D1%80%D0%B8%D0%B9%D1%81%D1%8C%D0%BA%D0%B0+108,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&output=embed"
+              width="600"
+              height="420"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -1919,334 +2101,378 @@
 
     <footer>
       <div class="wrap footer-row">
-        <div>© <span id="year"></span> PRO Шпалери (Прошпалери) — Львів</div>
+        <div>© <span id="year">2026</span> PRO Шпалери (Прошпалери) — Львів</div>
+        <address>
+          вул. Стрийська, 108, Львів ·
+          <a href="tel:+380975859452">+380 97 585 94 52</a>
+        </address>
         <div>Сайт-візитка</div>
       </div>
     </footer>
 
     <!-- ================= ПЛАВАЮЧА КНОПКА ================= -->
-    <button
-      class="fab"
-      onclick="openModal()"
-      aria-label="Замовити консультацію"
-    >
-      ✆
+    <button type="button" class="fab" data-open-modal="consult" aria-label="Замовити консультацію">
+      <span aria-hidden="true">✆</span>
     </button>
 
     <div class="modal-overlay" id="modalOverlay">
-      <div class="modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalSubtitle">
         <h3 id="modalTitle">Як вам зручно зв'язатись?</h3>
         <p id="modalSubtitle">Оберіть спосіб — відповімо якнайшвидше.</p>
         <div class="modal-options" id="modalOptions"></div>
-        <button class="modal-close" onclick="closeModal()">Закрити</button>
+        <button type="button" class="modal-close" id="modalClose">Закрити</button>
       </div>
     </div>
 
     <!-- ================= ЛАЙТБОКС-ГАЛЕРЕЯ ПО ТИПАХ ШПАЛЕР ================= -->
     <div class="lightbox-overlay" id="lightboxOverlay">
-      <div class="lightbox-box">
+      <div class="lightbox-box" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
         <div class="lightbox-head">
           <h3 id="lightboxTitle">Шпалери</h3>
-          <button class="lightbox-close" onclick="closeGallery()">✕</button>
+          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Закрити галерею">✕</button>
         </div>
         <div class="lightbox-main">
-          <img id="lightboxImg" src="" alt="" />
-          <button class="lightbox-nav lightbox-prev" onclick="galleryStep(-1)">
-            ‹
-          </button>
-          <button class="lightbox-nav lightbox-next" onclick="galleryStep(1)">
-            ›
-          </button>
+          <img id="lightboxImg" alt="" />
+          <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Попереднє фото">‹</button>
+          <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Наступне фото">›</button>
         </div>
+        <p class="sr-only" id="lightboxStatus" aria-live="polite"></p>
         <div class="lightbox-thumbs" id="lightboxThumbs"></div>
         <div class="lightbox-cta">
-          <button class="btn btn-primary" onclick="openModal('install')">
+          <button type="button" class="btn btn-primary" data-open-modal="install">
             Замовити поклейку цих шпалер
           </button>
         </div>
       </div>
     </div>
 
+    <!-- Анімації (окремий блок: якщо щось зламається в UI-скрипті нижче, контент усе одно з'явиться) -->
     <script>
-      // Контактні дані, canonical/OG-URL і JSON-LD тепер прописані статично
-      // прямо в HTML (head + розмітка нижче) — це усуває залежність SEO-даних
-      // від виконання JavaScript пошуковими та соцмережевими ботами.
-      // Об'єкт SITE лишається джерелом даних для інтерактивних елементів
-      // (кнопки дзвінка/Telegram/Viber у модалці, таблиця графіка роботи).
+      (function () {
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var els = document.querySelectorAll(".reveal, .reveal-stagger");
 
-      // ---- графік роботи ----
-      const hoursTable = document.getElementById("hoursTable");
-      SITE.hours.forEach(([day, time]) => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${day}</td><td>${time}</td>`;
-        hoursTable.appendChild(tr);
-      });
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // ---- модалка ----
-      // ---- мобільне меню ----
-      function toggleMobileMenu() {
-        document.getElementById("burgerBtn").classList.toggle("open");
-        document.getElementById("mobileMenu").classList.toggle("open");
-      }
-      function closeMobileMenu() {
-        document.getElementById("burgerBtn").classList.remove("open");
-        document.getElementById("mobileMenu").classList.remove("open");
-      }
-
-      const CONTACT_SETS = {
-        consult: {
-          title: "Як вам зручно зв'язатись?",
-          subtitle: "Оберіть спосіб — відповімо якнайшвидше.",
-          options: [
-            {
-              label: "☎ Подзвонити — " + SITE.phoneDisplay,
-              href: "tel:" + SITE.phoneRaw,
+        if (!reduced && "IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in-view");
+                  io.unobserve(entry.target);
+                }
+              });
             },
-            {
-              label: "✈ Написати в Telegram",
-              href: SITE.telegramLink,
-              blank: true,
-            },
-            { label: "💬 Написати у Viber", href: SITE.viberLink },
-            { label: "✉ Написати на пошту", href: "mailto:" + SITE.email },
-          ],
-        },
-        install: {
-          title: "Замовити поклейку шпалер",
-          subtitle: "Оберіть спосіб — узгодимо виїзд бригади майстрів.",
-          options: [
-            {
-              label: "☎ Подзвонити — " + SITE.installPhoneDisplay,
-              href: "tel:" + SITE.installPhoneRaw,
-            },
-            {
-              label: "✈ Написати в Telegram",
-              href: SITE.installTelegramLink,
-              blank: true,
-            },
-            { label: "💬 Написати у Viber", href: SITE.installViberLink },
-          ],
-        },
-      };
+            { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+          );
+          els.forEach(function (el) { io.observe(el); });
+        } else {
+          els.forEach(function (el) { el.classList.add("in-view"); });
+        }
 
-      function openModal(kind) {
-        const set = CONTACT_SETS[kind === "install" ? "install" : "consult"];
-        document.getElementById("modalTitle").textContent = set.title;
-        document.getElementById("modalSubtitle").textContent = set.subtitle;
-        const opts = document.getElementById("modalOptions");
-        opts.innerHTML = "";
-        set.options.forEach((o) => {
-          const a = document.createElement("a");
-          a.href = o.href;
-          a.textContent = o.label;
-          if (o.blank) {
-            a.target = "_blank";
-            a.rel = "noopener";
+        // ---- «віяло» зразків у hero: нахил від миші + легка анімація ----
+        // Цикл requestAnimationFrame працює ЛИШЕ коли віяло видно і вкладка активна
+        // (раніше крутився безперервно, навіть після прокрутки далеко від hero).
+        var fan = document.querySelector(".swatch-fan");
+        if (!fan || reduced) return;
+
+        var idleAngle = 0, hovering = false, inView = true, running = false;
+
+        function loop() {
+          if (!running) return;
+          if (!hovering) {
+            idleAngle += 0.006;
+            fan.style.setProperty("--fan-ry", Math.sin(idleAngle) * 4 + "deg");
+            fan.style.setProperty("--fan-rx", Math.cos(idleAngle * 0.8) * 2 + "deg");
           }
-          opts.appendChild(a);
+          requestAnimationFrame(loop);
+        }
+        function sync() {
+          var should = inView && !document.hidden;
+          if (should && !running) { running = true; requestAnimationFrame(loop); }
+          else if (!should) { running = false; }
+        }
+
+        fan.addEventListener("mousemove", function (e) {
+          hovering = true;
+          var r = fan.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          fan.style.setProperty("--fan-ry", x * 14 + "deg");
+          fan.style.setProperty("--fan-rx", -y * 14 + "deg");
         });
-        document.getElementById("modalOverlay").classList.add("open");
-      }
-      function closeModal() {
-        document.getElementById("modalOverlay").classList.remove("open");
-      }
-      document.getElementById("modalOverlay").addEventListener("click", (e) => {
-        if (e.target.id === "modalOverlay") closeModal();
-      });
+        fan.addEventListener("mouseleave", function () { hovering = false; });
+        document.addEventListener("visibilitychange", sync);
 
-      // ---- лайтбокс-галерея по типах шпалер ----
-      const GALLERIES = {
-        flizelinovi: {
-          title: "Флізелінові шпалери",
-          images: [
-            "images/assortment/flizelinovi/flizelin-1.webp",
-            "images/assortment/flizelinovi/flizelin-2.webp",
-            "images/assortment/flizelinovi/flizelin-3.webp",
-            "images/assortment/flizelinovi/flizelin-4.webp",
-            "images/assortment/flizelinovi/flizelin-5.webp",
-            "images/assortment/flizelinovi/flizelin-6.webp",
-            "images/assortment/flizelinovi/flizelin-7.webp",
-          ],
-        },
-        vinilovi: {
-          title: "Вінілові шпалери",
-          images: [
-            "images/assortment/vinilovi/vinil-1.webp",
-            "images/assortment/vinilovi/vinil-2.webp",
-            "images/assortment/vinilovi/vinil-3.webp",
-            "images/assortment/vinilovi/vinil-4.webp",
-            "images/assortment/vinilovi/vinil-5.webp",
-            "images/assortment/vinilovi/vinil-6.webp",
-            "images/assortment/vinilovi/vinil-7.webp",
-          ],
-        },
-        naturalni: {
-          title: "Натуральні шпалери, шпоновані шпалери",
-          images: [
-            "images/assortment/naturalni/natural-5.webp",
-            "images/assortment/naturalni/natural-6.webp",
-            "images/assortment/naturalni/natural-7.webp",
-            "images/assortment/naturalni/natural-8.webp",
-            "images/assortment/naturalni/natural-9.webp",
-          ],
-        },
-        panno: {
-          title: "Панно, фотошпалери, 3D",
-          images: [
-            "images/assortment/panno/panno-2.webp",
-            "images/assortment/panno/panno-3.webp",
-            "images/assortment/panno/panno-4.webp",
-            "images/assortment/panno/panno-5.webp",
-            "images/assortment/panno/panno-7.webp",
-            "images/assortment/panno/panno-8.webp",
-            "images/assortment/panno/panno-9.webp",
-          ],
-        },
-        farbuvannya: {
-          title: "Шпалери під фарбування",
-          images: [
-            "images/assortment/farbuvannya/farbuvannya-1.webp",
-            "images/assortment/farbuvannya/farbuvannya-2.webp",
-            "images/assortment/farbuvannya/farbuvannya-3.webp",
-            "images/assortment/farbuvannya/farbuvannya-4.webp",
-            "images/assortment/farbuvannya/farbuvannya-5.webp",
-          ],
-        },
-      };
+        if ("IntersectionObserver" in window) {
+          new IntersectionObserver(function (entries) {
+            inView = entries[0].isIntersecting;
+            sync();
+          }).observe(fan);
+        }
 
-      let currentGallery = null;
-      let currentIndex = 0;
-
-      function renderLightbox() {
-        const g = GALLERIES[currentGallery];
-        document.getElementById("lightboxTitle").textContent = g.title;
-        document.getElementById("lightboxImg").src = g.images[currentIndex];
-        document.getElementById("lightboxImg").alt = g.title;
-
-        const thumbs = document.getElementById("lightboxThumbs");
-        thumbs.innerHTML = "";
-        g.images.forEach((src, i) => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = g.title + " — фото " + (i + 1);
-          if (i === currentIndex) img.classList.add("active");
-          img.onclick = () => {
-            currentIndex = i;
-            renderLightbox();
-          };
-          thumbs.appendChild(img);
-        });
-      }
-
-      function openGallery(type) {
-        if (!GALLERIES[type]) return;
-        currentGallery = type;
-        currentIndex = 0;
-        renderLightbox();
-        document.getElementById("lightboxOverlay").classList.add("open");
-      }
-
-      function closeGallery() {
-        document.getElementById("lightboxOverlay").classList.remove("open");
-      }
-
-      function galleryStep(dir) {
-        const g = GALLERIES[currentGallery];
-        currentIndex = (currentIndex + dir + g.images.length) % g.images.length;
-        renderLightbox();
-      }
-
-      document
-        .getElementById("lightboxOverlay")
-        .addEventListener("click", (e) => {
-          if (e.target.id === "lightboxOverlay") closeGallery();
-        });
-
-      document.addEventListener("keydown", (e) => {
-        if (
-          !document.getElementById("lightboxOverlay").classList.contains("open")
-        )
-          return;
-        if (e.key === "Escape") closeGallery();
-        if (e.key === "ArrowRight") galleryStep(1);
-        if (e.key === "ArrowLeft") galleryStep(-1);
-      });
-
-      // ---- анімації появи елементів при скролі ----
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      if (!prefersReducedMotion && "IntersectionObserver" in window) {
-        const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
-              }
+        var ticking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (ticking || !inView) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+              fan.style.setProperty("--fan-ty", Math.min(window.scrollY * 0.12, 50) + "px");
+              ticking = false;
             });
           },
-          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+          { passive: true },
         );
-        revealEls.forEach((el) => io.observe(el));
-      } else {
-        document
-          .querySelectorAll(".reveal, .reveal-stagger")
-          .forEach((el) => el.classList.add("in-view"));
-      }
+        sync();
+      })();
+    </script>
 
-      // ---- parallax: нахил і прокрутка "віяла" зразків у hero ----
-      if (!prefersReducedMotion) {
-        const fan = document.querySelector(".swatch-fan");
-        if (fan) {
-          let idleAngle = 0;
-          let hovering = false;
+    <!-- Інтерфейс: мобільне меню, модалка зв'язку, лайтбокс-галереї -->
+    <script>
+      (function () {
+        "use strict";
 
-          fan.addEventListener("mousemove", (e) => {
-            hovering = true;
-            const rect = fan.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            fan.style.setProperty("--fan-ry", `${x * 14}deg`);
-            fan.style.setProperty("--fan-rx", `${-y * 14}deg`);
+        // ⚙️ ДАНІ ДЛЯ ІНТЕРАКТИВНИХ ЕЛЕМЕНТІВ (кнопки дзвінка/Telegram/Viber у модалці).
+        // Видимі контакти, графік, canonical, Open Graph та JSON-LD прописані статично в HTML
+        // — тож пошуковики й соцмережі бачать їх без виконання JavaScript.
+        var SITE = {
+          phoneDisplay: "+380 97 585 94 52",
+          phoneRaw: "+380975859452",
+          // окремий номер для замовлення поклейки
+          installPhoneDisplay: "+380 67 499 93 33",
+          installPhoneRaw: "+380674999333",
+          installTelegramLink: "https://t.me/+380674999333",
+          installViberLink: "viber://chat?number=%2B380674999333",
+          email: "proshpalery108@gmail.com",
+          telegramLink: "https://t.me/+380975859452",
+          viberLink: "viber://chat?number=%2B380975859452",
+        };
+
+        var $ = function (id) { return document.getElementById(id); };
+        var body = document.body;
+
+        var yearEl = $("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // ---------- допоміжне: фокус-пастка та повернення фокусу ----------
+        var FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        var openers = {};
+
+        function overlayOpen(overlay, focusTarget) {
+          openers[overlay.id] = document.activeElement;
+          overlay.classList.add("open");
+          body.classList.add("no-scroll");
+          if (focusTarget) focusTarget.focus();
+        }
+        function overlayClose(overlay) {
+          overlay.classList.remove("open");
+          var anyOpen = document.querySelector(".modal-overlay.open, .lightbox-overlay.open");
+          if (!anyOpen) body.classList.remove("no-scroll");
+          var back = openers[overlay.id];
+          if (back && document.contains(back) && back.offsetParent !== null) back.focus();
+        }
+        function trapTab(e, overlay) {
+          if (e.key !== "Tab") return;
+          var list = Array.prototype.filter.call(overlay.querySelectorAll(FOCUSABLE), function (el) {
+            return el.offsetParent !== null;
           });
-          fan.addEventListener("mouseleave", () => {
-            hovering = false;
+          if (!list.length) return;
+          var first = list[0], last = list[list.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+
+        // ---------- мобільне меню ----------
+        var burger = $("burgerBtn");
+        var mobileMenu = $("mobileMenu");
+        function setMenu(open) {
+          burger.classList.toggle("open", open);
+          mobileMenu.classList.toggle("open", open);
+          burger.setAttribute("aria-expanded", String(open));
+        }
+        burger.addEventListener("click", function () {
+          setMenu(!mobileMenu.classList.contains("open"));
+        });
+        mobileMenu.addEventListener("click", function (e) {
+          if (e.target.closest("a, button")) setMenu(false);
+        });
+        window.matchMedia("(min-width: 1241px)").addEventListener("change", function (e) {
+          if (e.matches) setMenu(false);
+        });
+
+        // ---------- модалка зв'язку ----------
+        var CONTACT_SETS = {
+          consult: {
+            title: "Як вам зручно зв'язатись?",
+            subtitle: "Оберіть спосіб — відповімо якнайшвидше.",
+            options: [
+              { label: "☎ Подзвонити — " + SITE.phoneDisplay, href: "tel:" + SITE.phoneRaw },
+              { label: "✈ Написати в Telegram", href: SITE.telegramLink, blank: true },
+              { label: "💬 Написати у Viber", href: SITE.viberLink },
+              { label: "✉ Написати на пошту", href: "mailto:" + SITE.email },
+            ],
+          },
+          install: {
+            title: "Замовити поклейку шпалер",
+            subtitle: "Оберіть спосіб — узгодимо виїзд бригади майстрів.",
+            options: [
+              { label: "☎ Подзвонити — " + SITE.installPhoneDisplay, href: "tel:" + SITE.installPhoneRaw },
+              { label: "✈ Написати в Telegram", href: SITE.installTelegramLink, blank: true },
+              { label: "💬 Написати у Viber", href: SITE.installViberLink },
+            ],
+          },
+        };
+
+        var modalOverlay = $("modalOverlay");
+
+        function openModal(kind) {
+          var set = CONTACT_SETS[kind === "install" ? "install" : "consult"];
+          $("modalTitle").textContent = set.title;
+          $("modalSubtitle").textContent = set.subtitle;
+          var opts = $("modalOptions");
+          opts.textContent = "";
+          set.options.forEach(function (o) {
+            var a = document.createElement("a");
+            a.href = o.href;
+            a.textContent = o.label;
+            if (o.blank) {
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+            }
+            opts.appendChild(a);
           });
+          overlayOpen(modalOverlay, opts.firstChild);
+        }
+        function closeModal() { overlayClose(modalOverlay); }
 
-          function idleTilt() {
-            if (!hovering) {
-              idleAngle += 0.006;
-              fan.style.setProperty(
-                "--fan-ry",
-                `${Math.sin(idleAngle) * 4}deg`,
-              );
-              fan.style.setProperty(
-                "--fan-rx",
-                `${Math.cos(idleAngle * 0.8) * 2}deg`,
-              );
-            }
-            requestAnimationFrame(idleTilt);
-          }
-          requestAnimationFrame(idleTilt);
+        modalOverlay.addEventListener("click", function (e) {
+          if (e.target === modalOverlay) closeModal();
+        });
+        $("modalClose").addEventListener("click", closeModal);
 
-          let ticking = false;
-          window.addEventListener("scroll", () => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const offset = Math.min(window.scrollY * 0.12, 50);
-                fan.style.setProperty("--fan-ty", `${offset}px`);
-                ticking = false;
-              });
-              ticking = true;
-            }
+        // ---------- лайтбокс-галереї ----------
+        // Мініатюри (…-thumb.webp, 128×128) значно легші за повні фото.
+        var GALLERIES = {
+          flizelinovi: {
+            title: "Флізелінові шпалери",
+            images: [1, 2, 3, 4, 5, 6, 7].map(function (n) { return "images/assortment/flizelinovi/flizelin-" + n + ".webp"; }),
+          },
+          vinilovi: {
+            title: "Вінілові шпалери",
+            images: [1, 2, 3, 4, 5, 6, 7].map(function (n) { return "images/assortment/vinilovi/vinil-" + n + ".webp"; }),
+          },
+          naturalni: {
+            title: "Натуральні шпалери, шпоновані шпалери",
+            images: [5, 6, 7, 8, 9].map(function (n) { return "images/assortment/naturalni/natural-" + n + ".webp"; }),
+          },
+          panno: {
+            title: "Панно, фотошпалери, 3D",
+            images: [2, 3, 4, 5, 7, 8, 9].map(function (n) { return "images/assortment/panno/panno-" + n + ".webp"; }),
+          },
+          farbuvannya: {
+            title: "Шпалери під фарбування",
+            images: [1, 2, 3, 4, 5].map(function (n) { return "images/assortment/farbuvannya/farbuvannya-" + n + ".webp"; }),
+          },
+        };
+
+        var lbOverlay = $("lightboxOverlay");
+        var lbImg = $("lightboxImg");
+        var lbThumbs = $("lightboxThumbs");
+        var current = null;
+        var index = 0;
+
+        function thumbSrc(src) { return src.replace(/\.webp$/, "-thumb.webp"); }
+
+        function buildThumbs() {
+          var g = GALLERIES[current];
+          lbThumbs.textContent = "";
+          g.images.forEach(function (src, i) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.setAttribute("aria-label", "Фото " + (i + 1) + " з " + g.images.length);
+            var img = document.createElement("img");
+            img.src = thumbSrc(src);
+            img.width = 64;
+            img.height = 64;
+            img.alt = "";
+            img.loading = "lazy";
+            img.decoding = "async";
+            b.appendChild(img);
+            b.addEventListener("click", function () { index = i; renderLightbox(); });
+            lbThumbs.appendChild(b);
           });
         }
-      }
+
+        function renderLightbox() {
+          var g = GALLERIES[current];
+          var n = g.images.length;
+          $("lightboxTitle").textContent = g.title;
+          lbImg.src = g.images[index];
+          lbImg.alt = g.title + " — фото " + (index + 1) + " з " + n;
+          $("lightboxStatus").textContent = "Фото " + (index + 1) + " з " + n;
+          Array.prototype.forEach.call(lbThumbs.children, function (b, i) {
+            var on = i === index;
+            b.firstChild.classList.toggle("active", on);
+            if (on) {
+              b.setAttribute("aria-current", "true");
+              if (b.scrollIntoView) b.scrollIntoView({ block: "nearest", inline: "center" });
+            } else {
+              b.removeAttribute("aria-current");
+            }
+          });
+          // підвантажуємо сусідні фото наперед
+          [1, -1].forEach(function (d) { new Image().src = g.images[(index + d + n) % n]; });
+        }
+
+        function openGallery(type) {
+          if (!GALLERIES[type]) return;
+          current = type;
+          index = 0;
+          buildThumbs();
+          renderLightbox();
+          overlayOpen(lbOverlay, $("lightboxClose"));
+        }
+        function closeGallery() { overlayClose(lbOverlay); }
+        function step(dir) {
+          var n = GALLERIES[current].images.length;
+          index = (index + dir + n) % n;
+          renderLightbox();
+        }
+
+        $("lightboxClose").addEventListener("click", closeGallery);
+        $("lightboxPrev").addEventListener("click", function () { step(-1); });
+        $("lightboxNext").addEventListener("click", function () { step(1); });
+        lbOverlay.addEventListener("click", function (e) {
+          if (e.target === lbOverlay) closeGallery();
+        });
+
+        // ---------- делегування кліків: кнопки «Замовити…» та картки асортименту ----------
+        document.addEventListener("click", function (e) {
+          var m = e.target.closest("[data-open-modal]");
+          if (m) { openModal(m.getAttribute("data-open-modal")); return; }
+          var g = e.target.closest("[data-open-gallery]");
+          if (g) openGallery(g.getAttribute("data-open-gallery"));
+        });
+
+        // ---------- клавіатура ----------
+        document.addEventListener("keydown", function (e) {
+          var modalOpen = modalOverlay.classList.contains("open");
+          var lbOpen = lbOverlay.classList.contains("open");
+
+          if (e.key === "Escape") {
+            if (modalOpen) closeModal();
+            else if (lbOpen) closeGallery();
+            else if (mobileMenu.classList.contains("open")) { setMenu(false); burger.focus(); }
+            return;
+          }
+          if (modalOpen) { trapTab(e, modalOverlay); return; }
+          if (lbOpen) {
+            if (e.key === "ArrowRight") step(1);
+            else if (e.key === "ArrowLeft") step(-1);
+            else trapTab(e, lbOverlay);
+          }
+        });
+      })();
     </script>
   </body>
 </html>
